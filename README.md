@@ -1,2 +1,2 @@
-# Nutrition_assistant
+# FoodHelper
 Веб-приложение "Помощник по питанию"
