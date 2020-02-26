@@ -1,0 +1,107 @@
+/* sistem  */
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	color: #000;
+	margin: 0;
+	padding: 0;
+}
+
+header{
+	margin-top: 30px;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+a:hover{
+	text-decoration: none;
+	color: black;
+}
+
+button:active, button:focus {
+  outline: none;
+}
+header h1{
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* menu block */
+
+.menu{
+	margin-top: 17px;
+	font-size: 14px;
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 40px;
+	margin-left: 20px;
+}
+
+.list{
+	position: relative;
+}
+
+.drop{
+	position: absolute;
+	width: 100px;
+	opacity: 0;
+	top: -9999em;
+	transition: 0.5s opacity;
+	border-top: 10px solid transparent;
+}
+
+.droped{
+	font-size: 12px;
+}
+
+.line{
+	padding: 0;
+}
+
+/*.menu a:hover{
+	padding-bottom: 5px;
+	border-bottom: solid 1px;
+	transition: 0.2s;
+}*/
+
+.menu2{
+	display: flex;
+}
+
+.list:hover .drop{
+	opacity: 1;
+	top: 20px;
+}
+
+/* first block */
+
+.first{
+	color: white;
+}
+
+.prewie{
+	background: url(../img/2.jpg) center/cover no-repeat; 
+	text-align: center;
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+
+.prewie h1{
+	font-size: 68px;
+	font-weight: 500;
+}
+
+.prewie h3{
+	font-size: 20px;
+	font-weight: 500;
+}
