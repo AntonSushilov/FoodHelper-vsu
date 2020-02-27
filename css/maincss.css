@@ -1,0 +1,159 @@
+/* sistem  */
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	color: #000;
+	margin: 0;
+	padding: 0;
+}
+
+header{
+	margin-top: 30px;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+a:hover{
+	text-decoration: none;
+	color: black;
+}
+
+button:active, button:focus {
+  outline: none;
+}
+header h1{
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* form reg */
+
+form{
+	width: 800px;
+	margin-left: 20%;
+	margin-top: 15%;
+}
+
+
+
+/* menu block */
+
+.menu{
+	margin-top: 17px;
+	font-size: 14px;
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 40px;
+	margin-left: 20px;
+}
+
+.list{
+	position: relative;
+}
+
+.drop{
+	position: absolute;
+	width: 150px;
+	opacity: 0;
+	top: -9999em;
+	transition: 0.5s opacity;
+	border-top: 10px solid transparent;
+	background-color: white;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+
+}
+
+.droped{
+	font-size: 12px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid black;
+}
+
+.droped2{
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+.line{
+	padding: 0;
+}
+
+/*.menu a:hover{
+	padding-bottom: 5px;
+	border-bottom: solid 1px;
+	transition: 0.2s;
+}*/
+
+.menu2{
+	display: flex;
+}
+
+.list:hover .drop{
+	opacity: 1;
+	top: 20px;
+	left: -30px;
+}
+
+.imgg{
+	height: 16px;
+	width: 16px;
+}
+
+
+.menu3{
+	margin-left: 320px;
+	margin-top: 15px;
+}
+
+.drop2{
+	background-color: white ;
+	position: absolute;
+	width: 100px;
+	opacity: 0;
+	top: -9999em;
+	right: 100%;
+	transition: 0.5s opacity;
+}
+
+
+.list:hover .drop2{
+	opacity: 1;
+	top: 0;
+}
+
+/* first block */
+
+.first{
+	color: white;
+}
+
+.prewie{
+	background: url(../img/2.jpg) center/cover no-repeat; 
+	text-align: center;
+	padding-top: 120px;
+	padding-bottom: 120px;
+}
+
+.prewie h1{
+	font-size: 68px;
+	font-weight: 500;
+}
+
+.prewie h3{
+	font-size: 20px;
+	font-weight: 500;
+}
+
