@@ -32,6 +32,15 @@ header h1{
 	color: #5da130;
 }
 
+header img{
+	height: 70px;
+	width: 60px;
+	position: absolute;
+	left: 24%;
+	top: 2.75%;
+
+}
+
 ul{
 	margin: 0;
 	padding: 0;
