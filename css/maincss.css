@@ -167,6 +167,7 @@ form{
 
 .first{
 	color: white;
+	margin-bottom: 50px;
 }
 
 .prewie{
@@ -186,3 +187,38 @@ form{
 	font-weight: 500;
 }
 
+/* guide block */
+
+.guide{
+	margin-top: 100px;
+	margin-bottom: 50px;
+}	
+
+.guide__button{
+	height: 110px;
+	width: 250px;
+	text-align: center;
+	margin-left: 30px;
+	margin-top: 90px;
+	background: url(../img/1479094756979.png);
+	border-radius: 5px;
+	border: none;
+}
+
+.guide__row{
+	border-right: 2px solid #5da130;
+	border-left: 2px solid #5da130;
+	padding-left: 40px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.guide h1{
+	color: #5da130;
+}
+
+p{
+	padding-left: 20px;
+	font-size: 16px;
+	text-align: justify;
+}
