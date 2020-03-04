@@ -1,5 +1,4 @@
-/* sistem  */
-
+//
 body{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
@@ -11,6 +10,7 @@ body{
 header{
 	margin-top: 30px;
 }
+
 
 a{
 	text-decoration: none;
@@ -28,6 +28,15 @@ button:active, button:focus {
 header h1{
 	font-family: 'Raleway', sans-serif;
 	font-weight: 700;
+	color: #5da130;
+}
+
+header img{
+	height: 70px;
+	width: 60px;
+	position: absolute;
+	left: 33%;
+	top: 2.75%;
 }
 
 ul{
@@ -39,14 +48,35 @@ ul{
 /* form reg */
 
 form{
-	width: 800px;
-	margin-left: 20%;
-	margin-top: 15%;
+	width: 500px;
+	margin-left: 17%;
+	margin-top: 14%;
 }
 
+.log form{
+	margin-top: 17.5%;
+}
 
+.both{
+	display: flex;
+}
 
-/* menu block */
+.both img{
+	height: 400px;
+	width: 300px;
+	margin-top: 9%;
+	margin-left: 80px;
+}
+
+.btn{
+	background-color: #5da130;
+	border: none;
+}
+
+.btn:hover{
+	background-color: #5da130;
+	border: block;
+}
 
 .menu{
 	margin-top: 17px;
@@ -70,16 +100,12 @@ form{
 	border-top: 10px solid transparent;
 	background-color: white;
 	border-bottom: 1px solid black;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
-
 }
 
 .droped{
 	font-size: 12px;
 	margin-top: 10px;
 	margin-bottom: 5px;
-	border-bottom: 1px solid black;
 }
 
 .droped2{
@@ -90,13 +116,6 @@ form{
 .line{
 	padding: 0;
 }
-
-/*.menu a:hover{
-	padding-bottom: 5px;
-	border-bottom: solid 1px;
-	transition: 0.2s;
-}*/
-
 .menu2{
 	display: flex;
 }
@@ -134,14 +153,12 @@ form{
 	top: 0;
 }
 
-/* first block */
-
 .first{
 	color: white;
 }
 
 .prewie{
-	background: url(../img/2.jpg) center/cover no-repeat; 
+	background: url(/img/2.jpg) center/cover no-repeat; 
 	text-align: center;
 	padding-top: 120px;
 	padding-bottom: 120px;
@@ -156,4 +173,3 @@ form{
 	font-size: 20px;
 	font-weight: 500;
 }
-
