@@ -30,3 +30,7 @@ Route::get('/registration', function () {
 Route::get('/authorization', function () {
     return view('authorization');
 });
+
+Route::get('/add', function () {
+    return view('add');
+});

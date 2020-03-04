@@ -31,7 +31,7 @@
                             |
                         </div>
                         <div class="col-lg-2">
-                            <li class="list"><a href="#">ДОПОЛНИТЕЛЬНО</a></li>
+                            <li class="list"><a href="add">ДОПОЛНИТЕЛЬНО</a></li>
                         </div>
                    </ul>
                 </div>
