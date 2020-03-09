@@ -15,9 +15,16 @@ a {
   color: black;
 }
 
+.logo {
+  font-family: "Raleway", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #5da130;
+}
+
 a:hover {
   text-decoration: none;
-  color: black;
+  color: #5da130;
 }
 
 button:active,
