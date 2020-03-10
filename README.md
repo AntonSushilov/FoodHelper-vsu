@@ -19,9 +19,9 @@
 
 <h2>Ссылки:</h2>
 <ul>
-	<li>[Техническое задание]()</li>
-	<li>[Trello](https://trello.com/b/TdKWGmIW/food-helper)</li>
-	<li>[Miro]()</li>
+	<li>- [Техническое задание](https://github.com/AntonSushilov/FoodHelper/blob/README.md/%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20_FoodHelper.docx).</li>
+	<li>- [Trello](https://trello.com/b/TdKWGmIW/food-helper).</li>
+	<li>- [Miro]().</li>
 </ul>
 <h2>Email для связи:</h2>
 <ul>
