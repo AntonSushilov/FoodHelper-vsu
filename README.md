@@ -21,7 +21,7 @@
 <ul>
 	<li><a href="https://github.com/AntonSushilov/FoodHelper/blob/README.md/%D0%A2%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20_FoodHelper.docx">Техническое задание</a></li>
 	<li><a href="https://trello.com/b/TdKWGmIW/food-helper">Trello</a></li>
-	<li><a href="#">Miro</a></li>
+	<li><a href="https://miro.com/app/board/o9J_kugITE0=/">Miro</a></li>
 </ul>
 <h2>Email для связи:</h2>
 <ul>
