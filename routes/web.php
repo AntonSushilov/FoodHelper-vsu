@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
 Route::get('/about', function () {
@@ -24,13 +24,12 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-Route::get('/registration', function () {
-    return view('registration');
-});
-Route::get('/authorization', function () {
-    return view('authorization');
-});
+
 
 Route::get('/add', function () {
     return view('add');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

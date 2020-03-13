@@ -1,4 +1,12 @@
-//
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
 body{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
@@ -17,9 +25,16 @@ a{
 	color: black;
 }
 
+.logo{
+	font-family: 'Raleway', sans-serif;
+	font-size: 40px;
+	font-weight: 700;
+	color: #5da130;
+}
+
 a:hover{
 	text-decoration: none;
-	color: black;
+	color: #5da130;
 }
 
 button:active, button:focus {
@@ -30,6 +45,7 @@ header h1{
 	font-weight: 700;
 	color: #5da130;
 }
+
 
 header img{
 	height: 70px;
@@ -158,7 +174,7 @@ form{
 }
 
 .prewie{
-	background: url(/img/2.jpg) center/cover no-repeat; 
+	background: url(./img/2.jpg) center/cover no-repeat; 
 	text-align: center;
 	padding-top: 120px;
 	padding-bottom: 120px;
