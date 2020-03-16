@@ -24,7 +24,7 @@
 
 <h2>Ссылки:</h2>
 <ul>
-	<li><a href="https://github.com/AntonSushilov/FoodHelper/blob/master/Documents/Kursovaya.docx">Техническое задание</a></li><li><a href="https://github.com/AntonSushilov/FoodHelper/blob/master/Documents/Kursovaya.docx">Курсовая работа</a></li>
+	<li><a href="https://github.com/AntonSushilov/FoodHelper/blob/master/Documents/Техническое_задание_FoodHelperV1_3.docx">Техническое задание</a></li><li><a href="https://github.com/AntonSushilov/FoodHelper/blob/master/Documents/Kursovaya.docx">Курсовая работа</a></li>
 	<li><a href="https://trello.com/b/TdKWGmIW/food-helper">Trello</a></li>
 	<li><a href="https://miro.com/app/board/o9J_kugITE0=/">Miro</a></li>
 </ul>
