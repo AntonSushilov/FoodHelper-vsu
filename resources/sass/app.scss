@@ -1,11 +1,4 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
-@import 'variables';
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
 
 body{
 	font-family: 'Open Sans', sans-serif;
@@ -174,7 +167,7 @@ form{
 }
 
 .prewie{
-	background: url(./img/2.jpg) center/cover no-repeat; 
+	background: url(/img/2.jpg) center/cover no-repeat; 
 	text-align: center;
 	padding-top: 120px;
 	padding-bottom: 120px;
