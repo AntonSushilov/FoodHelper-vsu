@@ -30,8 +30,6 @@ Route::get('/add', function () {
     return view('add');
 });
 
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
