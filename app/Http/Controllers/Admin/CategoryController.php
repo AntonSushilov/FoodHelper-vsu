@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Dish;
+use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class DishController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class DishController extends Controller
      */
     public function index()
     {
-        return view('admin.dishes.index', [
-        'dishes' => Dish::paginate(10)
+        return view('admin.categories.index', [
+        'categories' => Category::paginate(10)
         ]);
     }
 
@@ -27,11 +27,8 @@ class DishController extends Controller
      */
     public function create()
     {
-        //
-        return view('admin.dishes.create',[
-            'dish' => [],
-            'categories' => Category::with('children')->where('parent_id','0')->get(),
-            'delimiter' => ''
+        return view('admin.categories.create',[
+            'title' => ""
         ]);
     }
 
@@ -44,15 +41,19 @@ class DishController extends Controller
     public function store(Request $request)
     {
         //
+        Category::create([
+            'title'=>$request->title
+        ]);
+        return redirect()->route('admin.category.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Dish  $dish
+     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Dish $dish)
+    public function show(Category $category)
     {
         //
     }
@@ -60,34 +61,44 @@ class DishController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Dish  $dish
+     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dish $dish)
+    public function edit(Category $category)
     {
         //
+        return view('admin.categories.update',[
+            'title' => $category->title,
+            'id' => $category->id
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Dish  $dish
+     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dish $dish)
+    public function update(Request $request, Category $category)
     {
         //
+        $category->update([
+            'title'=>$request->title
+        ]);
+        return redirect()->route('admin.category.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Dish  $dish
+     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dish $dish)
+    public function destroy(Category $category)
     {
         //
+        $category->delete();
+        return redirect()->route('admin.category.index');
     }
 }

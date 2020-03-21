@@ -20,7 +20,8 @@
                         <div class="col-lg-7">
                             <li class="list"><a href="#">Admin-panel</a>
                                 <ul class="drop">
-                                   <li class="droped"><a href="{{route('admin.dish.index')}}">Блюда</a></li>
+                                   <li class="droped"><a href="{{route('admin.category.index')}}">Категории</a></li>
+                                   <li class="droped"><a href="#">Блюда</a></li>
                                    <li class="droped"><a href="#">Продукты</a></li>
                                 </ul>                        
                             </li>
