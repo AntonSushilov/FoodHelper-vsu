@@ -13,7 +13,10 @@
 	<form class="form-horizontal" action="{{route('admin.category.update', ['category'=>$id])}}" method="post">
 		{{ csrf_field() }}
 		@method('PUT')
-		@include('admin.categories.partials.form')
+		<label for="">Наименование</label>
+		<input type="text" class="form-control" name="title" placeholder="Название" value="{{$title}}" required>
+		<hr>
+		<input class="btn btn-primary" type="submit" value="Сохранить">
 	</form>
 
 </div>
