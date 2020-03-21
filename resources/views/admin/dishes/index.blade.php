@@ -28,7 +28,15 @@
 			@forelse($dishes as $dish)
 				<tr>
 					<td>{{$dish->id}}</td>
-					<td>{{$dish->name}}</td>
+					<td>{{$dish->category_id}}</td>
+					<td>{{$dish->title}}</td>
+					<td>{{$dish->info}}</td>
+					<td>{{$dish->composition}}</td>
+					<td>{{$dish->recipe}}</td>
+					<td>{{$dish->kcal}}</td>
+					<td>{{$dish->protein}}</td>
+					<td>{{$dish->fat}}</td>
+					<td>{{$dish->carbohydrate}}</td>
 					<td>
 						<a href="{{route('admin.dish.edit', ['id'=>$dish->$id])}}"><i class="fafa-edit"></i></a>
 					</td>

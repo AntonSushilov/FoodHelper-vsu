@@ -10,15 +10,16 @@
 
 	<hr />
 
-	<form class="form-horizontal" action="{{route('admin.dish.store')}}" method="post">
+	<form class="form-horizontal" action="{{route('admin.category.update', ['category'=>$id])}}" method="post">
 		{{ csrf_field() }}
-
-		
-
+		@method('PUT')
 
 
 
-		
+
+
+
 	</form>
 
 </div>
+@endsection
