@@ -8,6 +8,7 @@ body {
 
 header {
   margin-top: 30px;
+  z-index: 9999;
 }
 
 a {
@@ -41,9 +42,7 @@ header h1 {
 header img {
   height: 70px;
   width: 60px;
-  position: absolute;
-  left: 33%;
-  top: 2.75%;
+  position: relative;
 }
 
 ul {
@@ -107,6 +106,7 @@ form {
   border-top: 10px solid transparent;
   background-color: white;
   border-bottom: 1px solid black;
+  z-index: 9999;
 }
 
 .droped {
@@ -140,8 +140,12 @@ form {
 }
 
 .menu3 {
-  margin-left: 320px;
+  margin-left: 240px;
   margin-top: 15px;
+}
+
+.m4{
+  margin-left: 500px;
 }
 
 .drop2 {
@@ -180,3 +184,15 @@ form {
   font-weight: 500;
 }
 
+.form-horizontal{
+  margin: 0;
+}
+
+.elements{
+  display: flex;
+}
+
+.card{
+  margin-right: 3px;
+  margin-left: 3px; 
+}

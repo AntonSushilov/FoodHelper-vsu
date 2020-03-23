@@ -20,7 +20,7 @@
                         <div class="col-lg-3">
                             <li class="list"><a href="#">РУКОВОДСТВО</a>
                                 <ul class="drop">
-                                   <li class="droped"><a href="#">ПО ПРОДУКТАМ</a></li>
+                                   <li class="droped"><a href="produkt">ПО ПРОДУКТАМ</a></li>
                                    <li class="droped"><a href="#">ПО БЛЮДАМ</a></li>
                                 </ul>                        
                             </li>
