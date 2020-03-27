@@ -15,7 +15,7 @@
 		<thead>
 			<th>ID</th>
 			<th>Наименование</th>
-			<th>Действия</th>
+			<th class="text-center">Действия</th>
 		</thead>
 		<tbody>
 			@forelse($categories as $category)

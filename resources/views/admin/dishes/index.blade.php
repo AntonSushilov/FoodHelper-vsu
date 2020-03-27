@@ -23,6 +23,7 @@
 			<th>Белки</th>
 			<th>Жиры</th>
 			<th>Углеводы</th>
+			<th class="text-center">Действия</th>
 		</thead>
 		<tbody>
 			@forelse($dishes as $dish)

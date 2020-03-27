@@ -144,7 +144,7 @@ form {
   margin-top: 15px;
 }
 
-.m4{
+.m4 {
   margin-left: 500px;
 }
 
@@ -184,15 +184,21 @@ form {
   font-weight: 500;
 }
 
-.form-horizontal{
+.form-horizontal {
   margin: 0;
 }
 
-.elements{
+.elements {
   display: flex;
 }
 
-.card{
+.card {
   margin-right: 3px;
-  margin-left: 3px; 
+  margin-left: 3px;
 }
+
+.text-right form {
+  margin-top: 0px;
+  text-align: center;
+}
+
