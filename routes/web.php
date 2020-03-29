@@ -37,6 +37,14 @@ Route::get('/add', function () {
     return view('add');
 });
 
+Route::get('/product', function () {
+    return view('product');
+});
+
+Route::get('/dish', function () {
+    return view('dish');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

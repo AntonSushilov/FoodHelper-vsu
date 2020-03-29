@@ -23,6 +23,7 @@
 			<th>Белки</th>
 			<th>Жиры</th>
 			<th>Углеводы</th>
+			<th class="text-center">Действия</th>
 		</thead>
 		<tbody>
 			@forelse($dishes as $dish)
@@ -37,8 +38,17 @@
 					<td>{{$dish->protein}}</td>
 					<td>{{$dish->fat}}</td>
 					<td>{{$dish->carbohydrate}}</td>
-					<td>
-						<a href="{{route('admin.dish.edit', ['id'=>$dish->$id])}}"><i class="fafa-edit"></i></a>
+					<td class="text-right">
+						<form onsubmit="if(confirm('Удалить?')){return true }else{ return false}" action="{{route('admin.dish.destroy', $dish)}}" method="post">
+							<input type="hidden" name="_method" value="DELETE">
+							{{ csrf_field() }}
+
+							<a class="btn btn-default" href="{{route('admin.dish.edit', ['dish'=>$dish->id])}}"><i class="fa fa-edit"></i></a>
+							
+							<button type="submit" class="btn btn-default"><i class="fa fa-trash-o"></i></button>
+						</form>
+						
+
 					</td>
 				</tr>
 			@empty
