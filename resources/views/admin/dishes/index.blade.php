@@ -10,7 +10,7 @@
 
 	<hr />
 
-	<a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right"><i class="fafa-plus-square-o"></i>Создать блюдо</a>
+	<a href="{{route('admin.dish.create')}}" class="btn btn-primary pull-right"><i class="fafa-plus-square-o"></i>Создать блюдо</a>
 	<table class="table table-striped">
 		<thead>
 			<th>ID</th>
@@ -53,7 +53,7 @@
 				</tr>
 			@empty
 				<tr>
-					<td colspan="10" class="text-center"><h2>Данные отсутствуют</h2></td>
+					<td colspan="11" class="text-center"><h2>Данные отсутствуют</h2></td>
 				</tr>
 			@endforelse
 		</tbody>
