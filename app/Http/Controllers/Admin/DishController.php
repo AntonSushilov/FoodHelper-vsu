@@ -27,11 +27,16 @@ class DishController extends Controller
      */
     public function create()
     {
-        //
         return view('admin.dishes.create',[
-            'dish' => [],
-            'categories' => Category::with('children')->where('parent_id','0')->get(),
-            'delimiter' => ''
+            'category_id' => "",
+            'title' => "",
+            'info' => "",
+            'composition' => "",
+            'recipe' => "",
+            'kcal' => "",
+            'protein' => "",
+            'fat' => "",
+            'carbohydrate' => ""
         ]);
     }
 
@@ -44,6 +49,18 @@ class DishController extends Controller
     public function store(Request $request)
     {
         //
+        Dish::create([
+            'category_id'=>$request->category_id,
+            'title'=>$request->title,
+            'info'=>$request->info,
+            'composition'=>$request->composition,
+            'recipe'=>$request->recipe,
+            'kcal'=>$request->kcal,
+            'protein'=>$request->protein,
+            'fat'=>$request->fat,
+            'carbohydrate'=>$request->carbohydrate
+        ]);
+        return redirect()->route('admin.dish.index');
     }
 
     /**
@@ -66,6 +83,18 @@ class DishController extends Controller
     public function edit(Dish $dish)
     {
         //
+        return view('admin.dishes.update',[
+            'category_id'=>$dish->category_id,
+            'title'=>$dish->title,
+            'info'=>$dish->info,
+            'composition'=>$dish->composition,
+            'recipe'=>$dish->recipe,
+            'kcal'=>$dish->kcal,
+            'protein'=>$dish->protein,
+            'fat'=>$dish->fat,
+            'carbohydrate'=>$dish->carbohydrate,
+            'id' => $dish->id
+        ]);
     }
 
     /**
@@ -78,6 +107,19 @@ class DishController extends Controller
     public function update(Request $request, Dish $dish)
     {
         //
+        $dish->update([
+            'category_id'=>$request->category_id,
+            'title'=>$request->title,
+            'info'=>$request->info,
+            'composition'=>$request->composition,
+            'recipe'=>$request->recipe,
+            'kcal'=>$request->kcal,
+            'protein'=>$request->protein,
+            'fat'=>$request->fat,
+            'carbohydrate'=>$request->carbohydrate
+        ]);
+        return redirect()->route('admin.dish.index');
+
     }
 
     /**
@@ -89,5 +131,7 @@ class DishController extends Controller
     public function destroy(Dish $dish)
     {
         //
+        $dish->delete();
+        return redirect()->route('admin.dish.index');
     }
 }
