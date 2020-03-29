@@ -3,12 +3,12 @@
 @section('content')
 <div class="container">	
 	@component('admin.components.breadcrumb')
-	@slot('title') Список категорий @endslot
+	@slot('title') Список блюд @endslot
 	@slot('parent') Главная @endslot
-	@slot('active') Категории @endslot
+	@slot('active') Блюда @endslot
 	@endcomponent
 
-	<hr />
+	<hr /> 
 
 	<form class="form-horizontal" action="{{route('admin.category.store')}}" method="post">
 		{{ csrf_field() }}
