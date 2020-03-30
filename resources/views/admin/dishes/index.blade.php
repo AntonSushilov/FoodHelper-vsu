@@ -29,7 +29,7 @@
 			@forelse($dishes as $dish)
 				<tr>
 					<td>{{$dish->id}}</td>
-					<td>{{$dish->category_id}}</td>
+					<td>{{$dish->category->title}}</td>
 					<td>{{$dish->title}}</td>
 					<td>{{$dish->info}}</td>
 					<td>{{$dish->composition}}</td>

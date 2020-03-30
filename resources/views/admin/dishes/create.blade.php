@@ -16,23 +16,36 @@
 		
 		<label for="">Наименование</label>
 		<input type="text" class="form-control" name="title" value="{{$title}}" required>
+
 		<label for="">Категория</label>
-		<input type="integer" class="form-control" name="category_id" value="{{$category_id}}" required>
+		<select class="form-control" name="category_id">
+			<option value="0">-- без категории --</option>
+				@include('admin.dishes.create_form',['categories' => $categories])
+		</select>
+
 		<label for="">Описание</label>
 		<textarea type="text" class="form-control" name="info" value="{{$info}}" required></textarea>
+
 		<label for="">Состав</label>
 		<textarea type="text" class="form-control" name="composition" value="{{$composition}}" required></textarea>
+
 		<label for="">Рецепт</label>
 		<textarea type="text" class="form-control" name="recipe" value="{{$recipe}}" required></textarea>
+
 		<label for="">Количество калорий</label>
 		<input type="integer" class="form-control" name="kcal" value="{{$kcal}}" required>
+
 		<label for="">Количество белков</label>
 		<input type="integer" class="form-control" name="protein" value="{{$protein}}" required>
+
 		<label for="">Количество жиров</label>
 		<input type="integer" class="form-control" name="fat" value="{{$fat}}" required>
+
 		<label for="">Количество углеводов</label>
 		<input type="integer" class="form-control" name="carbohydrate" value="{{$carbohydrate}}" required>
+
 		<hr>
+		
 		<input class="btn btn-primary" type="submit" value="Сохранить">
 
 

@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-
-use App\Dish;
-use App\Category;
 use App\Http\Controllers\Controller;
+use App\Product;
 use Illuminate\Http\Request;
 
-class DishController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +15,8 @@ class DishController extends Controller
      */
     public function index()
     {
-        return view('admin.dishes.index', [
-        'dishes' => Dish::with('category')->paginate(10)
+        return view('admin.products.index', [
+        'products' => Product::paginate(10)
         ]);
     }
 
@@ -29,17 +27,15 @@ class DishController extends Controller
      */
     public function create()
     {
-        return view('admin.dishes.create',[
-            'category_id' => "",
+        return view('admin.products.create',[
             'title' => "",
             'info' => "",
+            'properties' => "",
             'composition' => "",
-            'recipe' => "",
             'kcal' => "",
             'protein' => "",
             'fat' => "",
-            'carbohydrate' => "",
-            'categories'=>Category::all()
+            'carbohydrate' => ""
         ]);
     }
 
@@ -51,28 +47,26 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        Dish::create([
-            'category_id'=>$request->category_id,
+            Product::create([
             'title'=>$request->title,
             'info'=>$request->info,
+            'properties'=>$request->properties,
             'composition'=>$request->composition,
-            'recipe'=>$request->recipe,
             'kcal'=>$request->kcal,
             'protein'=>$request->protein,
             'fat'=>$request->fat,
             'carbohydrate'=>$request->carbohydrate
         ]);
-        return redirect()->route('admin.dish.index');
+        return redirect()->route('admin.product.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Dish  $dish
+     * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Dish $dish)
+    public function show(Product $product)
     {
         //
     }
@@ -80,24 +74,21 @@ class DishController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Dish  $dish
+     * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dish $dish)
+    public function edit(Product $product)
     {
-        //
-        return view('admin.dishes.update',[
-            'category_id'=>$dish->category_id,
-            'title'=>$dish->title,
-            'info'=>$dish->info,
-            'composition'=>$dish->composition,
-            'recipe'=>$dish->recipe,
-            'kcal'=>$dish->kcal,
-            'protein'=>$dish->protein,
-            'fat'=>$dish->fat,
-            'carbohydrate'=>$dish->carbohydrate,
-            'id' => $dish->id,
-            'categories'=>Category::all()
+        return view('admin.products.update',[
+            'title'=>$product->title,
+            'info'=>$product->info,
+            'properties'=>$product->properties,
+            'composition'=>$product->composition,
+            'kcal'=>$product->kcal,
+            'protein'=>$product->protein,
+            'fat'=>$product->fat,
+            'carbohydrate'=>$product->carbohydrate,
+            'id' => $product->id
         ]);
     }
 
@@ -105,37 +96,33 @@ class DishController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Dish  $dish
+     * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dish $dish)
+    public function update(Request $request, Product $product)
     {
-        //
-        $dish->update([
-            'category_id'=>$request->category_id,
+        $product->update([
             'title'=>$request->title,
             'info'=>$request->info,
+            'properties'=>$request->properties,
             'composition'=>$request->composition,
-            'recipe'=>$request->recipe,
             'kcal'=>$request->kcal,
             'protein'=>$request->protein,
             'fat'=>$request->fat,
             'carbohydrate'=>$request->carbohydrate
         ]);
-        return redirect()->route('admin.dish.index');
-
+        return redirect()->route('admin.product.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Dish  $dish
+     * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dish $dish)
+    public function destroy(Product $product)
     {
-        //
-        $dish->delete();
-        return redirect()->route('admin.dish.index');
+        $product->delete();
+        return redirect()->route('admin.product.index');
     }
 }
