@@ -11,14 +11,22 @@
                 <img src="/img/avokadik.jpg" alt="">
                 <div class="row menu">
                    <ul class="menu2">
-                        <div class="col-lg-5">
+                        <div class="col-lg-3">
                             <li class="list"><a href="/">ГЛАВНАЯ</a></li>
                         </div>
                         <div class="col-lg-1 line">
                             |
                         </div>
-                        <div class="col-lg-7">
-                            <li class="list"><a href="/admin">Admin-panel</a>
+                        <div class="col-lg-4">
+                            <li>
+                            	<a href="{{route('admin.index')}}">Панель состояния</a>                        
+                            </li>
+                        </div>
+                        <div class="col-lg-1 line">
+                            |
+                        </div>
+                        <div class="col-lg-4">
+                            <li class="list"><a href="#">Admin-panel</a>
                                 <ul class="drop">
                                    <li class="droped"><a href="{{route('admin.category.index')}}">Категории</a></li>
                                    <li class="droped"><a href="{{route('admin.dish.index')}}">Блюда</a></li>
@@ -28,10 +36,10 @@
                         </div>
                    </ul>
                 </div>
-                   <ul class="menu3 m4">
+                   <ul class="menu3 m1">
                         <div class="col-lg-1">
 
-                            <li class="list"><img class="imgg" src="img/3.png" alt="">
+                            <li class="list"><img class="imgg" src="{{ url('/img/3.png') }}" alt="">
                                 <ul class="drop2">
                                     @if (Route::has('login'))
                                     @auth
