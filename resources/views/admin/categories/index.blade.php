@@ -8,10 +8,15 @@
 	@slot('active') Категории @endslot
 	@endcomponent
 
-	<hr />
+    <hr>
+    <div class="row">
+        <input type="text" id="myInputId" onkeyup="searchId()" placeholder="Поиск по ID..">
+        <input type="text" id="myInputName" onkeyup="searchName()" placeholder="Поиск по наименованию..">
+    </div>
+
 
 	<a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right"><i class="fafa-plus-square-o"></i>Создать категорию</a>
-	<table class="table table-striped">
+	<table class="table table-striped" id="myTable">
 		<thead>
 			<th>ID</th>
 			<th>Наименование</th>
@@ -28,10 +33,10 @@
 							{{ csrf_field() }}
 
 							<a class="btn btn-default" href="{{route('admin.category.edit', ['category'=>$category->id])}}"><i class="fa fa-edit"></i></a>
-							
+
 							<button type="submit" class="btn btn-default"><i class="fa fa-trash-o"></i></button>
 						</form>
-						
+
 
 					</td>
 				</tr>
@@ -52,4 +57,49 @@
 		</tfoot>
 	</table>
 </div>
+
+
+<script>
+    function searchId() {
+      // Declare variables
+      var input, filter, table, tr, td, i;
+      input = document.getElementById("myInputId");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+
+    function searchName() {
+        // Declare variables
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInputName");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[1];
+          if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+    }
+</script>
 @endsection

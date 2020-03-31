@@ -52,6 +52,7 @@ class DishController extends Controller
     public function store(Request $request)
     {
         //
+        dd($request->mass);
         Dish::create([
             'category_id'=>$request->category_id,
             'title'=>$request->title,
@@ -61,7 +62,7 @@ class DishController extends Controller
             'kcal'=>$request->kcal,
             'protein'=>$request->protein,
             'fat'=>$request->fat,
-            'carbohydrate'=>$request->carbohydrate
+            'carbohydrate'=>$request->carbohydrate,
         ]);
         return redirect()->route('admin.dish.index');
     }
