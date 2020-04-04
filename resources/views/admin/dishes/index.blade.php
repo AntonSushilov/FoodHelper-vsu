@@ -37,8 +37,16 @@
 					<td>{{$dish->id}}</td>
 					<td>{{$dish->category->title}}</td>
 					<td>{{$dish->title}}</td>
-					<td>{{$dish->info}}</td>
-					<td>{{$dish->composition}}</td>
+                    <td>{{$dish->info}}</td>
+
+                    <td>
+                        @forelse ($dish->product as $product)
+                            {{$product->title}}&nbsp;{{$product->pivot->mass}}гр
+                        @empty
+                            <td colspan="2" class="text-center"><h2>Данные отсутствуют</h2></td>
+                        @endforelse
+                    </td>
+
 					<td>{{$dish->recipe}}</td>
 					<td>{{$dish->kcal}}</td>
 					<td>{{$dish->protein}}</td>

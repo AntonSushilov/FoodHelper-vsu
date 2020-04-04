@@ -1,5 +1,5 @@
 <?php
- 
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,10 +15,9 @@ class CreateDishesTable extends Migration
     {
         Schema::create('dishes', function (Blueprint $table) {
             $table->id();
-            $table->integer('category_id');            
+            $table->integer('category_id');
             $table->string('title');
             $table->string('info');
-            $table->string('composition');
             $table->string('recipe');
             $table->integer('kcal');
             $table->integer('protein');

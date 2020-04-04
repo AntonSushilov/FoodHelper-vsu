@@ -1,5 +1,9 @@
 @extends('admin.layouts.app_admin')
 
+@section('name')
+@include('admin.dishes.inc.select')
+
+@endsection
 @section('content')
 <div class="container">
 	@component('admin.components.breadcrumb')
@@ -20,43 +24,20 @@
 		<label for="">Категория</label>
 		<select class="form-control" name="category_id">
 			<option value="0">-- без категории --</option>
-				@include('admin.dishes.create_form',['categories' => $categories])
+				@include('admin.dishes.inc.create_form',['categories' => $categories])
 		</select>
 
 		<label for="">Описание</label>
         <textarea type="text" class="form-control" name="info" value="{{$info}}" required></textarea>
 
 		<label for="">Состав</label>
-        <textarea type="text" class="form-control" name="composition" value="{{$composition}}" required></textarea>
-
-
-
-
-        <hr>
-        <div>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-            <table id="tab">
-              <tr class="row">
-                <td>
-                  <input type="text" placeholder="Продукт" name="products[]">
-                </td>
-                <td>
-                  <input type="text" placeholder="Граммы" name="mass[]">
-                </td>
-                <td><a href="#" class="delete">x</a>
-                </td>
-              </tr>
-            </table>
-
-            <input type="button" value="добавить строку" id="but">
-        </div>
-
+        <table id="tab">
+            <tr>
+            </tr>
+        </table>
+        <input type="button" value="+" id="add">
 
         <hr>
-
-
-
-
 
 		<label for="">Рецепт</label>
 		<textarea type="text" class="form-control" name="recipe" value="{{$recipe}}" required></textarea>
@@ -77,37 +58,50 @@
 
 		<input class="btn btn-primary" type="submit" value="Сохранить">
 
-
-
 	</form>
 
 </div>
 
+
 <script>
-    $(function() {
-        var i = 1;
+
+    var str = '<tr><td><select class="select-chosen" name="products[]">'+
+        '@include("admin.dishes.inc.select")'+
+        '<td><input type="text" placeholder="Граммы" name="mass[]"></td>'+
+        '<td><input type="button" value="-" class="delrow" /></td></select></td></tr>';
+
+    $(function table() {
         //добавить строку табюлицы
-        $('#but').on('click', function() {
-            i++;
-          var row = $('.row:last');
-          row.clone().insertAfter(row);
+        $('#add').click(function(){
+            $('#tab').append(str);
+            $('tr')
+            .find('td')
+            .parent()//traversing to 'tr' Element
+            .append('');
+
+
+        $('.delrow').click(function(){
+            $(this).parent().parent().remove(); //Deleting the Row (tr) Element
         });
+            $(function select(){
+                $('.select-chosen').chosen({
+                    width: 250,
+                    no_results_text: "Нет такого продукта!",
+                    placeholder_text_single: "Выберите продукт",
+                    search_contains: true,
+                    max_shown_results: 10
+                });
+            })
+        })
 
-        //удалить строку таблицы
-        $('#tab').on('click', '.delete', removeRow);
-        var rows = $('#tab tr').length;
-        function removeRow() {
-            if(i > 1)
-            {
-                i--;
-                $(this).closest('.row').remove();
-            }
 
-        }
-      })
+    })
+
+
 </script>
 
 @endsection
+
 
 
 
