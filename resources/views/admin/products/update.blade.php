@@ -1,7 +1,7 @@
 @extends('admin.layouts.app_admin')
 
 @section('content')
-<div class="container">	
+<div class="container">
 	@component('admin.components.breadcrumb')
 	@slot('title') Список категорий @endslot
 	@slot('parent') Главная @endslot
@@ -10,13 +10,19 @@
 
 	<hr />
 
-	<form class="form-horizontal" action="{{route('admin.product.update', ['product'=>$id])}}" method="post">
+	<form class="form-horizontal" action="{{route('admin.product.update', ['product'=>$id])}}" enctype="multipart/form-data" method="post">
 		{{ csrf_field() }}
-		@method('PUT')
+        @method('PUT')
 
 
 		<label for="">Наименование</label>
-		<input type="text" class="form-control" name="title" value="{{$title}}" required>
+        <input type="text" class="form-control" name="title" value="{{$title}}" required>
+
+        <label for="">Картинка</label>
+        <img src="{{ asset('/storage/'. $path_foto)}}" width="50" height="50" alt="Фото">
+        <div class="form-group">
+            <input type="file" name="image">
+        </div>
 
 		<label for="">Описание</label>
 		<textarea type="text" class="form-control" name="info" required>{{$info}}</textarea>

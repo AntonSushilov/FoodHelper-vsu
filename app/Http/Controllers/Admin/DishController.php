@@ -33,6 +33,7 @@ class DishController extends Controller
         return view('admin.dishes.create',[
             'category_id' => "",
             'title' => "",
+            'path_foto' => "",
             'info' => "",
             'recipe' => "",
             'kcal' => "",
@@ -53,9 +54,11 @@ class DishController extends Controller
     public function store(Request $request)
     {
         //
+        $path = $request->file('image')->store('dishes', 'public');
         $dish = Dish::create([
             'category_id'=>$request->category_id,
             'title'=>$request->title,
+            'path_foto'=>$path,
             'info'=>$request->info,
             'recipe'=>$request->recipe,
             'kcal'=>$request->kcal,
@@ -94,6 +97,7 @@ class DishController extends Controller
         return view('admin.dishes.update',[
             'category_id'=>$dish->category_id,
             'title'=>$dish->title,
+            'path_foto'=>$dish->path_foto,
             'info'=>$dish->info,
             'recipe'=>$dish->recipe,
             'kcal'=>$dish->kcal,
@@ -116,10 +120,12 @@ class DishController extends Controller
      */
     public function update(Request $request, Dish $dish)
     {
-        //
+        unlink(storage_path('app/public/'.$dish->path_foto));
+        $path = $request->file('image')->store('dishes', 'public');
         $dish->update([
             'category_id'=>$request->category_id,
             'title'=>$request->title,
+            'path_foto'=>$path,
             'info'=>$request->info,
             'recipe'=>$request->recipe,
             'kcal'=>$request->kcal,
@@ -148,6 +154,7 @@ class DishController extends Controller
     {
         //
         $dish->delete();
+        unlink(storage_path('app/public/'.$dish->path_foto));
         return redirect()->route('admin.dish.index');
     }
 }

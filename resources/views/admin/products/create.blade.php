@@ -1,7 +1,7 @@
 @extends('admin.layouts.app_admin')
 
 @section('content')
-<div class="container">	
+<div class="container">
 	@component('admin.components.breadcrumb')
 	@slot('title') Список продуктов @endslot
 	@slot('parent') Главная @endslot
@@ -10,12 +10,16 @@
 
 	<hr />
 
-	<form class="form-horizontal" action="{{route('admin.product.store')}}" method="post">
+	<form class="form-horizontal" action="{{route('admin.product.store')}}" method="post" enctype="multipart/form-data">
 		{{ csrf_field() }}
 
-		
 		<label for="">Наименование</label>
-		<input type="text" class="form-control" name="title" value="{{$title}}" required>
+        <input type="text" class="form-control" name="title" value="{{$title}}" required>
+
+        <label for="">Картинка</label>
+        <div class="form-group">
+            <input type="file" name="image">
+        </div>
 
 		<label for="">Описание</label>
 		<textarea type="text" class="form-control" name="info" value="{{$info}}" required></textarea>
@@ -39,11 +43,11 @@
 		<input type="integer" class="form-control" name="carbohydrate" value="{{$carbohydrate}}" required>
 
 		<hr>
-		
+
 		<input class="btn btn-primary" type="submit" value="Сохранить">
 
 
-		
+
 	</form>
 
 </div>

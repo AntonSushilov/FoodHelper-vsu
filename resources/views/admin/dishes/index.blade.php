@@ -21,7 +21,8 @@
 		<thead>
 			<th>ID</th>
 			<th>Категория</th>
-			<th>Наименование</th>
+            <th>Наименование</th>
+            <th>Фото</th>
 			<th>Информация</th>
 			<th>Состав</th>
 			<th>Рецепт</th>
@@ -36,7 +37,8 @@
 				<tr>
 					<td>{{$dish->id}}</td>
 					<td>{{$dish->category->title}}</td>
-					<td>{{$dish->title}}</td>
+                    <td>{{$dish->title}}</td>
+                    <td><img class="img_preview_small" src="{{ asset('/storage/'. $dish->path_foto)}}" width="50" height="50" alt="Фото"></td>
                     <td>{{$dish->info}}</td>
 
                     <td>
@@ -67,7 +69,7 @@
 				</tr>
 			@empty
 				<tr>
-					<td colspan="11" class="text-center"><h2>Данные отсутствуют</h2></td>
+					<td colspan="12" class="text-center"><h2>Данные отсутствуют</h2></td>
 				</tr>
 			@endforelse
 		</tbody>

@@ -17,6 +17,7 @@ class CreateDishesTable extends Migration
             $table->id();
             $table->integer('category_id');
             $table->string('title');
+            $table->string('path_foto');
             $table->string('info');
             $table->string('recipe');
             $table->integer('kcal');

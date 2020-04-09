@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -29,6 +30,7 @@ class ProductController extends Controller
     {
         return view('admin.products.create',[
             'title' => "",
+            'path_foto' => "",
             'info' => "",
             'properties' => "",
             'composition' => "",
@@ -47,8 +49,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-            Product::create([
+        $path = $request->file('image')->store('products', 'public');
+        Product::create([
             'title'=>$request->title,
+            'path_foto'=>$path,
             'info'=>$request->info,
             'properties'=>$request->properties,
             'composition'=>$request->composition,
@@ -81,6 +85,7 @@ class ProductController extends Controller
     {
         return view('admin.products.update',[
             'title'=>$product->title,
+            'path_foto'=>$product->path_foto,
             'info'=>$product->info,
             'properties'=>$product->properties,
             'composition'=>$product->composition,
@@ -101,8 +106,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+
+        unlink(storage_path('app/public/'.$product->path_foto));
+        $path = $request->file('image')->store('products', 'public');
         $product->update([
             'title'=>$request->title,
+            'path_foto'=>$path,
             'info'=>$request->info,
             'properties'=>$request->properties,
             'composition'=>$request->composition,
@@ -123,6 +132,7 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
+        unlink(storage_path('app/public/'.$product->path_foto));
         return redirect()->route('admin.product.index');
     }
 }

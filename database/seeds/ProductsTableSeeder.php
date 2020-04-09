@@ -15,6 +15,7 @@ class ProductsTableSeeder extends Seeder
         //
         App\Product::create([
             'title' => "Помидор",
+            'path_foto' => "0",
             'info' => "Помидор красный",
             'properties' => "Очень полезен",
             'composition' => "вода и мякоть",
@@ -25,6 +26,7 @@ class ProductsTableSeeder extends Seeder
         ]);
         App\Product::create([
             'title' => "Морковь",
+            'path_foto' => "0",
             'info' => "Морковь оранжевая",
             'properties' => "Очень полезенf",
             'composition' => "мякоть",
@@ -35,6 +37,7 @@ class ProductsTableSeeder extends Seeder
         ]);
         App\Product::create([
             'title' => "Картошка",
+            'path_foto' => "0",
             'info' => "Овощь",
             'properties' => "Очень полезен",
             'composition' => "мякоть",

@@ -18,7 +18,8 @@
 	<table class="table table-striped" id="myTable">
 		<thead>
 			<th>ID</th>
-			<th>Наименование</th>
+            <th>Наименование</th>
+            <th>Фото</th>
 			<th>Информация</th>
 			<th>Свойства</th>
 			<th>Состав</th>
@@ -32,7 +33,8 @@
 			@forelse($products as $product)
 				<tr>
 					<td>{{$product->id}}</td>
-					<td>{{$product->title}}</td>
+                    <td>{{$product->title}}</td>
+                    <td><img class="img_preview_small" src="{{ asset('/storage/'. $product->path_foto)}}" width="50" height="50" alt="Фото"></td>
 					<td>{{$product->info}}</td>
 					<td>{{$product->properties}}</td>
 					<td>{{$product->composition}}</td>
@@ -55,7 +57,7 @@
 				</tr>
 			@empty
 				<tr>
-					<td colspan="10" class="text-center"><h2>Данные отсутствуют</h2></td>
+					<td colspan="11" class="text-center"><h2>Данные отсутствуют</h2></td>
 				</tr>
 			@endforelse
 		</tbody>

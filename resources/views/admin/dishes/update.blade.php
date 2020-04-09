@@ -10,13 +10,19 @@
 
 	<hr />
 
-	<form class="form-horizontal" action="{{route('admin.dish.update', ['dish'=>$id])}}" method="post">
+	<form class="form-horizontal" action="{{route('admin.dish.update', ['dish'=>$id])}}" enctype="multipart/form-data" method="post">
 		{{ csrf_field() }}
 		@method('PUT')
 
 
 		<label for="">Наименование</label>
 		<input type="text" class="form-control" name="title" value="{{$title}}" required>
+
+        <label for="">Картинка</label>
+        <img src="{{ asset('/storage/'. $path_foto)}}" width="50" height="50" alt="Фото">
+        <div class="form-group">
+            <input type="file" name="image">
+        </div>
 
 		<label for="">Категория</label>
 		<select class="form-control" name="category_id">

@@ -14,12 +14,17 @@
 
 	<hr />
 
-	<form class="form-horizontal" action="{{route('admin.dish.store')}}" method="post">
+	<form class="form-horizontal" action="{{route('admin.dish.store')}}" method="post" enctype="multipart/form-data">
 		{{ csrf_field() }}
 
 
 		<label for="">Наименование</label>
 		<input type="text" class="form-control" name="title" value="{{$title}}" required>
+
+        <label for="">Картинка</label>
+        <div class="form-group">
+            <input type="file" name="image">
+        </div>
 
 		<label for="">Категория</label>
 		<select class="form-control" name="category_id">
