@@ -6,7 +6,7 @@
                     <a class="logo" href="{{ url('/') }}">
                     {{ config('app.name', 'FoodHelper') }}
                 </a>
-                    
+
                 </div>
                 <img src="/img/avokadik.jpg" alt="">
                 <div class="row menu">
@@ -20,9 +20,9 @@
                         <div class="col-lg-3">
                             <li class="list"><a href="#">РУКОВОДСТВО</a>
                                 <ul class="drop">
-                                   <li class="droped"><a href="product">ПО ПРОДУКТАМ</a></li>
-                                   <li class="droped"><a href="dish">ПО БЛЮДАМ</a></li>
-                                </ul>                        
+                                   <li class="droped"><a href="{{route('products')}}">ПО ПРОДУКТАМ</a></li>
+                                   <li class="droped"><a href="dishes">ПО БЛЮДАМ</a></li>
+                                </ul>
                             </li>
                         </div>
                         <div class="col-lg-1 line">
@@ -47,7 +47,7 @@
                                     @if (Route::has('login'))
                                     @auth
                                     <li><a class="droped2" href="home">{{ Auth::user()->name }}</a></li>
-                                    
+
                                         <li><a class="droped2" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -57,16 +57,16 @@
                                     @else
                                    <li><a class="droped2" href="{{ route('login') }}">ВХОД</a></li>
                                    @if (Route::has('register'))
-                                   <li><a class="droped2" href="{{ route('register') }}">РЕГИСТРАЦИЯ</a></li>    
+                                   <li><a class="droped2" href="{{ route('register') }}">РЕГИСТРАЦИЯ</a></li>
                                    @endif
                                     @endauth
 
                                     @endif
-                                    
-                                </ul>                        
+
+                                </ul>
                             </li>
                         </div>
-                   </ul>            
+                   </ul>
             </div>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf

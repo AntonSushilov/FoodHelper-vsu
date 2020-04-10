@@ -194,12 +194,61 @@ form {
   display: flex;
 }
 
-.card{
-  margin-right: 3px;
-  margin-left: 3px;
-}
-
 .text-right form{
   margin-top: 0px;
   text-align: center;
 }
+
+
+
+
+
+
+.cards{
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 7px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    flex-basis: 31%;
+    text-decoration: none;
+}
+.card-image{
+    width: 384px;
+    height: 250px;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.card-text{
+    padding-top: 20px;
+    padding-bottom: 35px;
+    padding-left: 23px;
+    padding-right: 23px;
+}
+
+
+.card-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.card-info{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+

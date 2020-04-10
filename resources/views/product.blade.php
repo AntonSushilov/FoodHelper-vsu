@@ -1,45 +1,22 @@
 @extends('layouts.app')
 
+@section('title','Продукты'.' - FoodHelper')
+
 @section('content')
 
-<section class="">
-        <div class="container">
-            <div class="elements">
-                <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="img/Qgrldiuu.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">картошечка</h5>
-                        <p class="card-text">потом я урежу размер картинки, прост каефная же пикча че ее портить ну согласись</p>
-                        <a href="#" class="btn btn-primary">подробнее</a>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="img/Qgrldiuu.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">картошечка</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">подробнее</a>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="img/Qgrldiuu.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">картошечка</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">подробнее</a>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="img/Qgrldiuu.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">картошечка</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">подробнее</a>
-                    </div>
-                </div>
 
-            </div>
-        </div>
+    <div class="container">
+        <h1>{{$product->id}}</h1>
+        <h1>{{$product->title}}</h1>
+        <h1><img class="img_preview_small" src="{{ asset('/storage/'. $product->path_foto)}}" width="50" height="50" alt="Фото"></h1>
+        <h1>{{$product->info}}</h1>
+        <h1>{{$product->properties}}</h1>
+        <h1>{{$product->composition}}</td>
+        <h1>{{$product->kcal}}</h1>
+        <h1>{{$product->protein}}</h1>
+        <h1>{{$product->fat}}</h1>
+        <h1>{{$product->carbohydrate}}</h1>
     </div>
-</section>
+
+
 @endsection

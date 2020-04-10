@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/products','FoodHelperController@productIndex')->name('products');
+Route::get('/products/{product}','FoodHelperController@productShow')->name('product');
+
+Route::get('/dishes','FoodHelperController@dishIndex')->name('dishes');
+Route::get('/dishes/{dish}','FoodHelperController@dishShow')->name('dish');
+
 
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function(){
 	Route::get('/', 'DashboardController@dashboard')->name('admin.index');
@@ -38,13 +44,7 @@ Route::get('/add', function () {
     return view('add');
 });
 
-Route::get('/product', function () {
-    return view('product');
-});
 
-Route::get('/dish', function () {
-    return view('dish');
-});
 
 
 Auth::routes();
