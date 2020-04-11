@@ -24,6 +24,7 @@
 		<label for="">Состав</label>
 		<textarea type="text" class="form-control" name="composition" value="{{$composition}}" required></textarea>
 		<label for="">Рецепт</label>
+
 		<textarea type="text" class="form-control" name="recipe" value="{{$recipe}}" required></textarea>
 		<label for="">Количество калорий</label>
 		<input type="integer" class="form-control" name="kcal" value="{{$kcal}}" required>
