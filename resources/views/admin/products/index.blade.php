@@ -10,11 +10,11 @@
 
     <hr>
     <div class="row">
-        <input type="text" id="myInputId" onkeyup="searchId()" placeholder="Поиск по ID..">
-        <input type="text" id="myInputName" onkeyup="searchName()" placeholder="Поиск по наименованию..">
+        <input class="find" type="text" id="myInputId" onkeyup="searchId()" placeholder="Поиск по ID..">
+        <input class="find" type="text" id="myInputName" onkeyup="searchName()" placeholder="Поиск по наименованию..">
     </div>
 
-	<a href="{{route('admin.product.create')}}" class="btn btn-primary pull-right"><i class="fafa-plus-square-o"></i>Создать продукт</a>
+	<a href="{{route('admin.product.create')}}" class="btn btn-primary pull-right bot"><i class="fafa-plus-square-o"></i>Создать продукт</a>
 	<table class="table table-striped" id="myTable">
 		<thead>
 			<th>ID</th>
@@ -27,7 +27,7 @@
 			<th>Белки</th>
 			<th>Жиры</th>
 			<th>Углеводы</th>
-			<th class="text-center">Действия</th>
+			<th>Действия</th>
 		</thead>
 		<tbody>
 			@forelse($products as $product)
@@ -42,7 +42,7 @@
 					<td>{{$product->protein}}</td>
 					<td>{{$product->fat}}</td>
 					<td>{{$product->carbohydrate}}</td>
-					<td class="text-right">
+					<td>
 						<form onsubmit="if(confirm('Удалить?')){return true }else{ return false}" action="{{route('admin.product.destroy', $product)}}" method="post">
 							<input type="hidden" name="_method" value="DELETE">
 							{{ csrf_field() }}
