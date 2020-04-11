@@ -4,11 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-
 class Category extends Model
 {
 	protected $guarded = [];
-
     //
     public function dish(){
     	return $this->hasMany('App\Dish');

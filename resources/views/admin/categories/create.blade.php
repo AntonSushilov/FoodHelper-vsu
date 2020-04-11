@@ -1,14 +1,14 @@
 @extends('admin.layouts.app_admin')
 
 @section('content')
-<div class="container">	
+<div class="container">
 	@component('admin.components.breadcrumb')
-	@slot('title') Список блюд @endslot
+	@slot('title') Список категорий @endslot
 	@slot('parent') Главная @endslot
-	@slot('active') Блюда @endslot
+	@slot('active') Категории @endslot
 	@endcomponent
 
-	<hr /> 
+	<hr />
 
 	<form class="form-horizontal" action="{{route('admin.category.store')}}" method="post">
 		{{ csrf_field() }}
