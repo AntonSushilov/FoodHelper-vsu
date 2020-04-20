@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="container">
-	<div class="card">
+	<div class="tu">
         <a href="https://zen.yandex.ru/media/bodystatus/zdorovoe-pitanie-kak-organizovat-pravilnoe-pitanie-dlia-zdorovoi-jizni-5a95baefa815f1d0e3bd6321" class="card" target="_blank">
 	                <div class="card-text">
 	                    <div class="card-heading">
@@ -13,7 +13,7 @@
 	                </div>
         </a>
     </div>
-    <div class="card">
+    <div class="tu">
         <a href="https://www.kp.ru/guide/zdorovoe-pitanie.html" class="card" target="_blank">
 	                <div class="card-text">
 	                    <div class="card-heading">
@@ -22,7 +22,7 @@
 	                </div>
         </a>
     </div>
-    <div class="card">
+    <div class="tu">
         <a href="https://armeparh.ru/alkogolizm/vred" class="card" target="_blank">
 	                <div class="card-text">
 	                    <div class="card-heading">
@@ -31,7 +31,7 @@
 	                </div>
         </a>
     </div>
-    <div class="card">
+    <div class="tu">
         <a href="https://zen.yandex.ru/media/bodystatus/vrednye-jiry-v-pitanii-svoistva-polza-i-vred-jirov-bezopasnoe-upotreblenie-produktov-bogatyh-jirami--5aeb34c0f03173ba38d09448" class="card" target="_blank">
 	                <div class="card-text">
 	                    <div class="card-heading">

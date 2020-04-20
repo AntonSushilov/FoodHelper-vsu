@@ -10,13 +10,13 @@
 
     <hr>
     <div class="row">
-        <input type="text" id="myInputId" onkeyup="searchId()" placeholder="Поиск по ID..">
-        <input type="text" id="myInputNameUser" onkeyup="searchNameUser()" placeholder="Поиск по имени..">
-        <input type="text" id="myInputName" onkeyup="searchName()" placeholder="Поиск по названию..">
+        <input class="find" type="text" id="myInputId" onkeyup="searchId()" placeholder="Поиск по ID..">
+        <input class="find" type="text" id="myInputNameUser" onkeyup="searchNameUser()" placeholder="Поиск по имени..">
+        <input class="find" type="text" id="myInputName" onkeyup="searchName()" placeholder="Поиск по названию..">
     </div>
 
 
-	<a href="{{route('admin.ration.create')}}" class="btn btn-primary pull-right"><i class="fafa-plus-square-o"></i>Создать рацион</a>
+	<a href="{{route('admin.ration.create')}}" class="btn btn-primary pull-right bot"><i class="fafa-plus-square-o"></i>Создать рацион</a>
 	<table class="table table-striped" id="myTable">
 		<thead>
             <th>ID</th>

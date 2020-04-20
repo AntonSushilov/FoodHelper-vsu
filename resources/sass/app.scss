@@ -282,3 +282,81 @@ form {
     line-height: 32px;
     margin-left: 30px;
 }
+
+.both__1{
+  display: flex;
+  margin-bottom: 20px;
+  margin-left: 2.6%;
+}
+
+.both__1 img{
+  width: 400px;
+  height: 400px;
+  border-radius: 10px;
+}
+
+.decrip{
+  margin-left: 30px;
+}
+
+.decrip span{
+  font-size: 21px;
+  color: #5da130;
+  font-weight: 600;
+}
+
+.both__2{
+  display: flex;
+  justify-content: space-between;
+}
+
+.both__1 .jumbotron{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.clip{
+    white-space: nowrap; 
+    overflow: hidden; 
+   text-overflow: ellipsis; 
+}
+
+.car{
+  height: 580px;
+}
+
+.uss{
+  height: 420px;
+}
+
+.tu{
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+
+.tu a{
+  height: 100px;
+  padding: 0;
+}
+
+.see{
+  margin-bottom: 15px;
+}
+
+tr form{
+  width: 100px;
+}
+
+table{
+  margin-top: 10px;
+}
+
+.bot{
+  margin-bottom: 10px;
+}
+
+.find{
+  margin-left: 20px;
+  width: 270px;
+}

@@ -27,14 +27,14 @@
                         <tr>
                         </tr>
                     </table>
-                    <input type="button" value="+" id="add_1_1">
+                    <input class="btn btn-primary" type="button" value="+" id="add_1_1">
                 </td>
                 <td>
                     <table id="tab_1_2">
                         <tr>
                         </tr>
                     </table>
-                    <input type="button" value="+" id="add_1_2">
+                    <input class="btn btn-primary" type="button" value="+" id="add_1_2">
                 </td>
             </tr>
 
@@ -45,14 +45,14 @@
                         <tr>
                         </tr>
                     </table>
-                    <input type="button" value="+" id="add_2_1">
+                    <input class="btn btn-primary" type="button" value="+" id="add_2_1">
                 </td>
                 <td>
                     <table id="tab_2_2">
                         <tr>
                         </tr>
                     </table>
-                    <input type="button" value="+" id="add_2_2">
+                    <input class="btn btn-primary" type="button" value="+" id="add_2_2">
                 </td>
             </tr>
 
@@ -63,14 +63,14 @@
                         <tr>
                         </tr>
                     </table>
-                    <input type="button" value="+" id="add_3_1">
+                    <input class="btn btn-primary" type="button" value="+" id="add_3_1">
                 </td>
                 <td>
                     <table id="tab_3_2">
                         <tr>
                         </tr>
                     </table>
-                    <input type="button" value="+" id="add_3_2">
+                    <input class="btn btn-primary" type="button" value="+" id="add_3_2">
                 </td>
                 </td>
             </tr>
@@ -97,7 +97,7 @@
                 });
             })
     //
-    var str1_1 = '<tr><td><select class="select-chosen" name="products1[]">'+
+    var str1_1 = '<tr><td><select class="select-chosen " name="products1[]">'+
         '@include("admin.rations.inc.select_product")'+
         '<td><input type="text" placeholder="Граммы" name="mass1[]"></td>'+
         '<td><input type="button" value="-" class="delrow"></td>'+

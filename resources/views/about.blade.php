@@ -4,7 +4,7 @@
 @section('content')
 <div class="container">
 	<div class="cards">
-            <div class="card">
+            <div class="card car">
                 <img class="card-image uss" src="/img/ant.jpg">
                 <div class="card-text">
                     <div class="card-heading">
@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card car">
                 <img class="card-image uss" src="/img/vov.jpg">
                 <div class="card-text">
                     <div class="card-heading">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="card car">
                 <img class="card-image uss" src="/img/dim.jpg">
                 <div class="card-text">
                     <div class="card-heading">

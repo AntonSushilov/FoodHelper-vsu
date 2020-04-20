@@ -15,7 +15,7 @@
                     <div class="card-heading">
                         <h3 class="card-title">{{$product->title}}</h3>
                     </div>
-                    <div class="card-info">
+                    <div class="card-info clip">
                         {{$product->info}}
                     </div>
                 </div>
