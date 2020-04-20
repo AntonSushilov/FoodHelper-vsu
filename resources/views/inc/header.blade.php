@@ -20,8 +20,9 @@
                         <div class="col-lg-3">
                             <li class="list"><a href="#">РУКОВОДСТВО</a>
                                 <ul class="drop">
-                                   <li class="droped"><a href="{{route('products')}}">ПО ПРОДУКТАМ</a></li>
+                                   <li class="droped"><a href="products">ПО ПРОДУКТАМ</a></li>
                                    <li class="droped"><a href="dishes">ПО БЛЮДАМ</a></li>
+                                   <li class="droped"><a href="rations">ПО РАЦИОНАМ</a></li>
                                 </ul>
                             </li>
                         </div>

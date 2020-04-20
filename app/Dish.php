@@ -13,6 +13,10 @@ class Dish extends Model
     }
 
     public function product(){
-    	return $this->belongsToMany('App\Product')->withPivot('mass');
+    	return $this->belongsToMany('App\Product', 'dish_product')->withPivot('mass');
+    }
+
+    public function food(){
+    	return $this->belongsToMany('App\Food')->withPivot('food');
     }
 }

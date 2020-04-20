@@ -5,7 +5,7 @@
 
 @endsection
 @section('content')
-<div class="container">
+<div class="container" id="app">
 	@component('admin.components.breadcrumb')
 	@slot('title') Список блюд @endslot
 	@slot('parent') Главная @endslot
@@ -42,6 +42,8 @@
         </table>
         <input type="button" value="+" id="add">
 
+
+
         <hr>
 
 		<label for="">Рецепт</label>
@@ -73,7 +75,8 @@
     var str = '<tr><td><select class="select-chosen" name="products[]">'+
         '@include("admin.dishes.inc.select")'+
         '<td><input type="text" placeholder="Граммы" name="mass[]"></td>'+
-        '<td><input type="button" value="-" class="delrow" /></td></select></td></tr>';
+        '<td><input type="button" value="-" class="delrow"></td>'+
+        '</select></td></tr>';
 
     $(function table() {
         //добавить строку табюлицы
@@ -85,9 +88,9 @@
             .append('');
 
 
-        $('.delrow').click(function(){
-            $(this).parent().parent().remove(); //Deleting the Row (tr) Element
-        });
+            $('.delrow').click(function(){
+                $(this).parent().parent().remove(); //Deleting the Row (tr) Element
+            });
             $(function select(){
                 $('.select-chosen').chosen({
                     width: 250,

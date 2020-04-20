@@ -66,10 +66,17 @@ class DishController extends Controller
             'fat'=>$request->fat,
             'carbohydrate'=>$request->carbohydrate,
         ]);
+        if($request->products)
+        {
+            for($i=0;$i<count($request->products);$i++){
+                if($request->products[$i] != 0)
+                {
+                    $dish->product()->attach($request->products[$i], ['mass' => $request->mass[$i]]);
+                }
 
-        for($i=0;$i<count($request->products);$i++){
-            $dish->product()->attach($request->products[$i], ['mass' => $request->mass[$i]]);
+            }
         }
+
 
         return redirect()->route('admin.dish.index');
     }
@@ -153,8 +160,10 @@ class DishController extends Controller
     public function destroy(Dish $dish)
     {
         //
+        $dish->product()->detach();
         $dish->delete();
         unlink(storage_path('app/public/'.$dish->path_foto));
+
         return redirect()->route('admin.dish.index');
     }
 }

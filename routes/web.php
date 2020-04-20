@@ -18,12 +18,16 @@ Route::get('/products/{product}','FoodHelperController@productShow')->name('prod
 Route::get('/dishes','FoodHelperController@dishIndex')->name('dishes');
 Route::get('/dishes/{dish}','FoodHelperController@dishShow')->name('dish');
 
+Route::get('/rations','FoodHelperController@rationIndex')->name('rations');
+Route::get('/rations/{ration}','FoodHelperController@rationShow')->name('ration');
 
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function(){
 	Route::get('/', 'DashboardController@dashboard')->name('admin.index');
-	Route::resource('/category', 'CategoryController', ['as'=>'admin']);
+    Route::resource('/food', 'FoodController', ['as'=>'admin']);
+    Route::resource('/category', 'CategoryController', ['as'=>'admin']);
 	Route::resource('/dish', 'DishController', ['as'=>'admin']);
     Route::resource('/product', 'ProductController', ['as'=>'admin']);
+    Route::resource('/ration', 'RationController', ['as'=>'admin']);
 });
 
 
