@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Главная'.' - FoodHelper')
 @section('content')
 
 <section class="first">
@@ -7,7 +7,7 @@
             <div class="prewie">
                 <div class="row">
                    <div class="col-lg-12">
-                        <h1>ЗАБОТА О ЗДОРОВЬЕ</h1> 
+                        <h1>ЗАБОТА О ЗДОРОВЬЕ</h1>
                    </div>
                 </div>
                 <div class="row">

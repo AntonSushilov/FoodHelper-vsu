@@ -12,6 +12,29 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['namespase' => 'user'], function () {
+    Route::get('/products','FoodHelperController@productIndex')->name('products');
+    Route::get('/products/{product}','FoodHelperController@productShow')->name('product');
+
+    Route::get('/dishes','FoodHelperController@dishIndex')->name('dishes');
+    Route::get('/dishes/{dish}','FoodHelperController@dishShow')->name('dish');
+
+    Route::get('/rations','FoodHelperController@rationIndex')->name('rations');
+    Route::get('/rations/{ration}','FoodHelperController@rationShow')->name('ration');
+});
+
+
+
+
+Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function(){
+	Route::get('/', 'DashboardController@dashboard')->name('admin.index');
+    Route::resource('/food', 'FoodController', ['as'=>'admin']);
+    Route::resource('/category', 'CategoryController', ['as'=>'admin']);
+	Route::resource('/dish', 'DishController', ['as'=>'admin']);
+    Route::resource('/product', 'ProductController', ['as'=>'admin']);
+    Route::resource('/ration', 'RationController', ['as'=>'admin']);
+});
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,6 +52,9 @@ Route::get('/contact', function () {
 Route::get('/add', function () {
     return view('add');
 });
+
+
+
 
 Auth::routes();
 
