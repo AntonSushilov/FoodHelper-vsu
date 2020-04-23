@@ -15,7 +15,7 @@
     </div>
 
 	<a href="{{route('admin.product.create')}}" class="btn btn-primary pull-right bot"><i class="fafa-plus-square-o"></i>Создать продукт</a>
-	
+
 </div>
 
 <table class="table table-striped" id="myTable">

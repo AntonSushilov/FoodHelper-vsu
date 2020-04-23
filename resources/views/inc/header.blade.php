@@ -47,7 +47,7 @@
                                 <ul class="drop2">
                                     @if (Route::has('login'))
                                     @auth
-                                    <li><a class="droped2" href="home">{{ Auth::user()->name }}</a></li>
+                                    <li><a class="droped2" href="{{route('home')}}">{{ Auth::user()->name }}</a></li>
 
                                         <li><a class="droped2" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

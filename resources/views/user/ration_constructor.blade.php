@@ -12,14 +12,22 @@
                        <h3>Продукты</h3>
                        <input class="find" type="text" id="myInputId" onkeyup="searchId()" placeholder="Поиск по продуктам">
                     </div>
-                    <div class="cardss" onclick = "myFunc()" id='draggableSpan' draggable='true' ondragstart='onDragStart(event);'>
-                        <div class="card" >
+                    <div class="cardss" >
+                        <div class="card" draggable="true" ondragstart="drag(event)" id="drag1">
                             <img class="card-image" src="../../public/img/dim.jpg" alt="Фото продукта">
                             <div class="card-text" id="mydivheader">
                                 <p >котлета</p>
                             </div>
                         </div>
+                        <div class="card" raggable="true" ondragstart="drag(event)" id="drag2" >
+                            <img class="card-image" src="../../public/img/dim.jpg" alt="Фото продукта">
+                            <div class="card-text" id="mydivheader">
+                                <p >котлета</p>
+                            </div>
+                        </div>
+
                     </div>
+
                </div>
                <div class="prod jumbotron">
                    <div class="both7 up">
@@ -40,74 +48,89 @@
                 <div class="day jumbotron" >
                   <h3>Завтрак</h3>
                   <form action="" >
-                     <div class="zone" ondragover='onDragOver(event);' ondrop='onDrop(event);'>
-                       
+                     <div class="zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+
                      </div>
                   </form>
                 </div>
                 <div class="day jumbotron">
                   <h3>Обед</h3>
                   <form action="">
-                     <div class="zone" ondragover='onDragOver(event);' ondrop='onDrop(event);'>
-                       
+                     <div class="zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+
                      </div>
                   </form>
                 </div>
                 <div class="day jumbotron">
                   <h3>Ужин</h3>
                   <form action="">
-                     <div class="zone" ondragover='onDragOver(event);' ondrop='onDrop(event);'>
-                       
+                     <div class="zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+
                      </div>
                   </form>
                 </div>
            </div>
        </div>
    </div>
-   
+
 
 <script>
 
-  const firstDiv = document.querySelector( ".cardss" );
 
-  function myFunc() {
-    p = document.getElementById("q1");
-    p_prime = p.cloneNode(true);
-    const newDiv = firstDiv.cloneNode( true ); // клонируем элемент с его потомками
-    document.p.appendChild( newDiv ); // добавляем клонированный элемент элементу <body>
-  }
+
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        var nodeCopy = document.getElementById(data).cloneNode(true);
+        ev.target.appendChild(nodeCopy);
+        ev.stopPropagation();
+        return false;
+    }
+   /* const firstDiv = document.querySelector( ".card" );
+
 
 
     function onDragStart(event) {
-  event
- .dataTransfer
- .setData('text/plain', event.target.id);
+        event
+        .dataTransfer
+        .setData('text/plain', event.target.id);
 
-  event
- .currentTarget
- .style
- .backgroundColor = '';
-}
+        event
+        .currentTarget
+        .style
+        .backgroundColor = '';
+    }
 
-function onDragOver(event) {
-  event.preventDefault();
-}
+    function onDragOver(event) {
+        event.preventDefault();
+    }
 
     function onDrop(event) {
-  const id = event
- .dataTransfer
- .getData('text');
+        const id = event
+        .dataTransfer
+        .getData('text');
 
-  const draggableElement = document.getElementById(id);
-  const dropzone = event.target;
- 
-  dropzone.appendChild(draggableElement);
-  const newDiv = firstDiv.cloneNode( true ); // клонируем элемент с его потомками
-    document.p.appendChild( newDiv ); // добавляем клонированный элемент элементу <body>
-  event
- .dataTransfer
- .clearData();
-}
+        const draggableElement = document.getElementById(id);
+        const dropzone = event.target;
+
+        dropzone.appendChild(draggableElement);
+        const newDiv = firstDiv.cloneNode( true ); // клонируем элемент с его потомками
+        document.p.appendChild( newDiv ); // добавляем клонированный элемент элементу <body>
+
+
+
+        event
+        .dataTransfer
+        .clearData();
+    }*/
 </script>
 
 

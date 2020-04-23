@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['namespase' => 'user'], function () {
+Route::group(['namespase' => 'guest'], function () {
     Route::get('/products','FoodHelperController@productIndex')->name('products');
     Route::get('/products/{product}','FoodHelperController@productShow')->name('product');
 
@@ -23,7 +23,16 @@ Route::group(['namespase' => 'user'], function () {
     Route::get('/rations/{ration}','FoodHelperController@rationShow')->name('ration');
 });
 
+Route::group(['prefix'=>'user','namespase' => 'user', 'middleware'=>['auth']], function () {
+    Route::resource('/ration', 'RationController', ['as'=>'user']);
+    Route::get('/home', function () {
+        return view('user.home');
+    })->name('home');
 
+    Route::get('/ration_constructor', function () {
+        return view('user.ration_constructor');
+    })->name('ration_constructor');
+});
 
 
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function(){
@@ -37,25 +46,23 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], 
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('guest.welcome');
 })->name('welcome');
 
 Route::get('/about', function () {
-    return view('about');
+    return view('guest.about');
 })->name('about');
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('guest.contact');
 })->name('contact');
 
 
 Route::get('/add', function () {
-    return view('add');
+    return view('guest.add');
 })->name('add');
 
-Route::get('/ration_constructor', function () {
-    return view('ration_constructor');
-})->name('ration_constructor');
+
 
 
 Auth::routes();

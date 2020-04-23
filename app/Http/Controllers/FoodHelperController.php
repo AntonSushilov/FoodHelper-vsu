@@ -19,19 +19,16 @@ class FoodHelperController extends Controller
         }
         else{
             $products = Product::first()->paginate(15);
-            return view('products', [
+            return view('guest.products', [
                 'products' => $products
             ]);
         }
-
-
-
     }
 
     public function productShow(Product $product)
     {
 
-        return view('product', [
+        return view('guest.product', [
             'product' => $product
         ]);
     }
@@ -47,7 +44,7 @@ class FoodHelperController extends Controller
         else{
             $dishes = Dish::first()->paginate(15);
 
-            return view('dishes', [
+            return view('guest.dishes', [
             'dishes' => $dishes
         ]);
         }
@@ -56,7 +53,7 @@ class FoodHelperController extends Controller
     public function dishShow(Dish $dish)
     {
 
-        return view('dish', [
+        return view('guest.dish', [
             'dish' => $dish
         ]);
     }
@@ -73,7 +70,7 @@ class FoodHelperController extends Controller
         else{
             $rations = Ration::first()->paginate(15);
 
-            return view('rations', [
+            return view('guest.rations', [
                 'rations' => $rations
             ]);
         }
@@ -82,9 +79,11 @@ class FoodHelperController extends Controller
     public function rationShow(Ration $ration)
     {
 
-        return view('ration', [
+        return view('guest.ration', [
             'ration' => $ration
         ]);
     }
+
+
 
 }

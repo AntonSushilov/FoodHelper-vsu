@@ -16,7 +16,7 @@
 
 
 	<a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right bot"><i class="fafa-plus-square-o"></i>Создать категорию</a>
-	
+
 </div>
 <table class="table table-striped" id="myTable">
     <thead>

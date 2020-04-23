@@ -17,7 +17,7 @@
 
 
 	<a href="{{route('admin.dish.create')}}" class="btn btn-primary pull-right bot"><i class="fafa-plus-square-o"></i>Создать блюдо</a>
-	
+
 </div>
 <table class="table table-striped" id="myTable">
     <thead>

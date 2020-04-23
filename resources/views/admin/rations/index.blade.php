@@ -17,7 +17,7 @@
 
 
 	<a href="{{route('admin.ration.create')}}" class="btn btn-primary pull-right bot"><i class="fafa-plus-square-o"></i>Создать рацион</a>
-	
+
 </div>
 <table class="table table-striped" id="myTable">
         <thead>

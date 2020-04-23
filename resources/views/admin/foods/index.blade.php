@@ -16,7 +16,7 @@
 
 
 	<a href="{{route('admin.food.create')}}" class="btn btn-primary pull-right bot"><i class="fafa-plus-square-o"></i>Создать приём пищи</a>
-	
+
 </div>
 <table class="table table-striped" id="myTable">
     <thead>
@@ -52,7 +52,7 @@
       <tr>
         <td>
           <ul class="pagination pull-right">
-            {{$foods->links()}}
+           {{$foods->links()}}
           </ul>
         </td>
       </tr>
