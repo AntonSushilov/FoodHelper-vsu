@@ -53,7 +53,9 @@ Route::get('/add', function () {
     return view('add');
 })->name('add');
 
-
+Route::get('/ration_constructor', function () {
+    return view('ration_constructor');
+})->name('ration_constructor');
 
 
 Auth::routes();
