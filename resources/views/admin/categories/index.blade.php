@@ -10,12 +10,12 @@
 
     <hr>
     <div class="row">
-        <input type="text" id="myInputId" onkeyup="searchId()" placeholder="Поиск по ID..">
-        <input type="text" id="myInputName" onkeyup="searchName()" placeholder="Поиск по наименованию..">
+        <input class="find" type="text" id="myInputId" onkeyup="searchId()" placeholder="Поиск по ID..">
+        <input class="find" type="text" id="myInputName" onkeyup="searchName()" placeholder="Поиск по наименованию..">
     </div>
 
 
-	<a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right"><i class="fafa-plus-square-o"></i>Создать категорию</a>
+	<a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right bot"><i class="fafa-plus-square-o"></i>Создать категорию</a>
 	<table class="table table-striped" id="myTable">
 		<thead>
 			<th>ID</th>

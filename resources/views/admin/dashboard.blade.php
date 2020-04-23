@@ -46,7 +46,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row see">
         <div class="col-sm-6">
 			<a class="btn btn-block btn-default" href="{{route('admin.food.create')}}">Создать приём пищи</a>
 			<a class="list-group-item" href="{{route('admin.food.index')}}">
@@ -61,7 +61,7 @@
 		</div>
 
     </div>
-    <div class="row">
+    <div class="row see">
         <div class="col-sm-6">
 			<a class="btn btn-block btn-default" href="{{route('admin.dish.create')}}">Создать блюдо</a>
 			<a class="list-group-item" href="{{route('admin.dish.index')}}">
@@ -75,7 +75,7 @@
 			</a>
 		</div>
     </div>
-    <div class="row">
+    <div class="row see">
         <div class="col-sm-12">
 			<a class="btn btn-block btn-default" href="{{route('admin.ration.create')}}">Создать рацион</a>
 			<a class="list-group-item" href="{{route('admin.ration.index')}}">

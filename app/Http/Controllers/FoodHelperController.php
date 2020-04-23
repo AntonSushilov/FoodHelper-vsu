@@ -11,52 +11,79 @@ class FoodHelperController extends Controller
 {
     public function productIndex(Request $request)
     {
-        $products = Product::first()->paginate(15);
+        $error = 'null';
+        if($products = Product::first() === null){
+            return view('error',[
+                'error'=>$error
+            ]);
+        }
+        else{
+            $products = Product::first()->paginate(15);
+            return view('products', [
+                'products' => $products
+            ]);
+        }
 
-        return view('products', [
-            'products' => $products,
-        ]);
+
+
     }
 
     public function productShow(Product $product)
     {
 
         return view('product', [
-            'product' => $product,
+            'product' => $product
         ]);
     }
 
     public function dishIndex(Request $request)
     {
-        $dishes = Dish::first()->paginate(15);
+        $error = 'null';
+        if($dishes = Dish::first() === null){
+            return view('error',[
+                'error'=>$error
+            ]);
+        }
+        else{
+            $dishes = Dish::first()->paginate(15);
 
-        return view('dishes', [
-            'dishes' => $dishes,
+            return view('dishes', [
+            'dishes' => $dishes
         ]);
+        }
     }
 
     public function dishShow(Dish $dish)
     {
 
         return view('dish', [
-            'dish' => $dish,
+            'dish' => $dish
         ]);
     }
 
     public function rationIndex(Request $request)
     {
-        $rations = Ration::first()->paginate(15);
 
-        return view('rations', [
-            'rations' => $rations,
-        ]);
+        $error = 'null';
+        if($rations = Ration::first() === null){
+            return view('error',[
+                'error'=>$error
+            ]);
+        }
+        else{
+            $rations = Ration::first()->paginate(15);
+
+            return view('rations', [
+                'rations' => $rations
+            ]);
+        }
     }
 
     public function rationShow(Ration $ration)
     {
 
         return view('ration', [
-            'ration' => $ration,
+            'ration' => $ration
         ]);
     }
 
