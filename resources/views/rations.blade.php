@@ -21,6 +21,7 @@
             @endforeach
 
         </div>
+        {{$rations->links()}}
     </div>
 
 

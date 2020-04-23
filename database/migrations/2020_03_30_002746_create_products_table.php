@@ -17,13 +17,13 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('path_foto');
-            $table->string('info');
-            $table->string('properties');
-            $table->string('composition');
-            $table->integer('kcal');
-            $table->integer('protein');
-            $table->integer('fat');
-            $table->integer('carbohydrate');
+            $table->text('info');
+            $table->longText('properties');
+            $table->text('composition');
+            $table->double('kcal');
+            $table->double('protein');
+            $table->double('fat');
+            $table->double('carbohydrate');
             $table->timestamps();
         });
     }

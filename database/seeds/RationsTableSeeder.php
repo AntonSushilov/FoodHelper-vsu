@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Product;
 
-class ProductsTableSeeder extends Seeder
+class RationsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +11,6 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-
+        //
     }
 }

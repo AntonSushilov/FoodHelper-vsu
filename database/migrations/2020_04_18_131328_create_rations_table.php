@@ -17,7 +17,7 @@ class CreateRationsTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('title');
-            $table->string('info');
+            $table->text('info');
             $table->timestamps();
         });
     }

@@ -19,5 +19,6 @@ class UsersTableSeeder extends Seeder
             'email'=>'admin@mail.ru',
             'password'=>bcrypt('12345678')
         ]);
+
     }
 }

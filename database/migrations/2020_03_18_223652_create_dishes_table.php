@@ -18,12 +18,12 @@ class CreateDishesTable extends Migration
             $table->integer('category_id');
             $table->string('title');
             $table->string('path_foto');
-            $table->string('info');
-            $table->string('recipe');
-            $table->integer('kcal');
-            $table->integer('protein');
-            $table->integer('fat');
-            $table->integer('carbohydrate');
+            $table->text('info');
+            $table->longText('recipe');
+            $table->double('kcal');
+            $table->double('protein');
+            $table->double('fat');
+            $table->double('carbohydrate');
             $table->timestamps();
         });
     }

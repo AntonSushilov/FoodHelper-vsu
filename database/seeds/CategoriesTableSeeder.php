@@ -20,41 +20,5 @@ class CategoriesTableSeeder extends Seeder
         App\Category::create([
             'title' => "Третье",
         ]);
-        App\Category::create([
-            'title' => "Первое",
-        ]);
-        App\Category::create([
-            'title' => "Второе",
-        ]);
-        App\Category::create([
-            'title' => "Третье",
-        ]);
-        App\Category::create([
-            'title' => "Первое",
-        ]);
-        App\Category::create([
-            'title' => "Второе",
-        ]);
-        App\Category::create([
-            'title' => "Третье",
-        ]);
-        App\Category::create([
-            'title' => "Первое",
-        ]);
-        App\Category::create([
-            'title' => "Второе",
-        ]);
-        App\Category::create([
-            'title' => "Третье",
-        ]);
-        App\Category::create([
-            'title' => "Первое",
-        ]);
-        App\Category::create([
-            'title' => "Второе",
-        ]);
-        App\Category::create([
-            'title' => "Третье",
-        ]);
     }
 }
