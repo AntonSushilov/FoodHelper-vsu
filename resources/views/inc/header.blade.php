@@ -3,7 +3,7 @@
 
             <div class="row">
                 <div class="col-lg-3">
-                    <a class="logo" href="{{ url('/') }}">
+                    <a class="logo" href="{{route('welcome')}}">
                     {{ config('app.name', 'FoodHelper') }}
                 </a>
 
@@ -12,7 +12,7 @@
                 <div class="row menu">
                    <ul class="menu2">
                         <div class="col-lg-2">
-                            <li class="list"><a href="/">ГЛАВНАЯ</a></li>
+                            <li class="list"><a href="{{route('welcome')}}">ГЛАВНАЯ</a></li>
                         </div>
                         <div class="col-lg-1 line">
                             |
@@ -30,13 +30,13 @@
                             |
                         </div>
                         <div class="col-lg-2">
-                            <li class="list"><a href="about">О НАС</a></li>
+                            <li class="list"><a href="{{route('about')}}">О НАС</a></li>
                         </div>
                         <div class="col-lg-1 line">
                             |
                         </div>
                         <div class="col-lg-2">
-                            <li class="list"><a href="add">ДОПОЛНИТЕЛЬНО</a></li>
+                            <li class="list"><a href="{{route('add')}}">ДОПОЛНИТЕЛЬНО</a></li>
                         </div>
                    </ul>
                 </div>
