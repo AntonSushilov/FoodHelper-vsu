@@ -8,7 +8,7 @@
                 </a>
 
                 </div>
-                <img src="/img/avokadik.jpg" alt="">
+                <img src="/img/logo/avokadik-logo.jpg" alt="">
                 <div class="row menu">
                    <ul class="menu2">
                         <div class="col-lg-2">
@@ -43,7 +43,7 @@
                    <ul class="menu3">
                         <div class="col-lg-1">
 
-                            <li class="list"><img class="imgg" src="img/3.png" alt="">
+                            <li class="list"><img class="imgg" src="img/icons/house.png" alt="">
                                 <ul class="drop2">
                                     @if (Route::has('login'))
                                     @auth
@@ -52,7 +52,7 @@
                                         <li><a class="droped2" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}</a>
+                                        {{ __('Выйти') }}</a>
 
                                         </li>
                                     @else

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="both log">
-<img src="img/avokadik2.jpg" alt="">
+<img src="img/logo/avokadik-reg.jpg" alt="">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 

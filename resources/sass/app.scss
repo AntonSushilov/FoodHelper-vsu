@@ -70,8 +70,7 @@ form {
 }
 
 .both img {
-  height: 400px;
-  width: 300px;
+
   margin-top: 9%;
   margin-left: 80px;
 }
@@ -118,8 +117,9 @@ form {
 }
 
 .droped2 {
-  font-size: 12px;
-  margin-top: 5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 5px;
 }
 
 .line {
@@ -137,8 +137,8 @@ form {
 }
 
 .imgg {
-  height: 16px;
-  width: 16px;
+  height: 22px;
+  width: 22px;
 }
 
 .menu3 {
@@ -170,7 +170,7 @@ form {
 }
 
 .prewie {
-  background: url(/img/2.jpg) center/cover no-repeat;
+  background: url(/img/prewie.jpg) center/cover no-repeat;
   text-align: center;
   padding-top: 120px;
   padding-bottom: 120px;
@@ -214,6 +214,7 @@ form {
 }
 .card{
     background: #FFFFFF;
+
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
     border-radius: 7px;
     overflow: hidden;
@@ -316,9 +317,9 @@ form {
 }
 
 .clip{
-    white-space: nowrap; 
-    overflow: hidden; 
-   text-overflow: ellipsis; 
+    white-space: nowrap;
+    overflow: hidden;
+   text-overflow: ellipsis;
 }
 
 .car{
@@ -360,3 +361,4 @@ table{
   margin-left: 20px;
   width: 270px;
 }
+

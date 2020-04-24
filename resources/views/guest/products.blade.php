@@ -10,7 +10,7 @@
         <div class="cards">
             @foreach ($products as $product)
             <a href="{{route('product', ['product'=>$product->id])}}" class="card">
-                <img class="card-image" src="{{ asset('/storage/'. $product->path_foto)}}" alt="Фото продукта">
+                <img class="card-image card-image-prod" src="{{ asset('/storage/'. $product->path_foto)}}" alt="Фото продукта">
                 <div class="card-text">
                     <div class="card-heading">
                         <h3 class="card-title">{{$product->title}}</h3>
