@@ -46,8 +46,8 @@
                </div>
            </div>
            <div class="right" id="divRight">
-            <form class="form-horizontal" action="{{route(user.rations_constructor.store')}}" method="post">
-            {{ csrf_field() }}
+            <form class="form-horizontal" action="{{route('user.ration_constructor.store')}}" method="post">
+                {{ csrf_field() }}
                 <div class="day jumbotron" >
                   <h3>Завтрак</h3>
 
@@ -72,6 +72,7 @@
                      </div>
 
                 </div>
+
                 <input class="btn btn-primary" type="submit" value="Сохранить">
             </form>
            </div>
