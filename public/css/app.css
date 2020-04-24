@@ -859,3 +859,65 @@ table {
   width: 270px;
 }
 
+.left{
+  width: 49%;
+}
+
+.right{
+  width: 49%;
+}
+
+.both7{
+  display: flex;
+  justify-content: space-between;
+}
+
+.both7 .jumbotron{
+  padding-top: 10px;
+}
+
+.up{
+  margin-bottom: 20px;
+}
+
+.cardss{
+
+  display: flex;
+}
+
+.card{
+  width: 200px;
+  height: 150px;
+  cursor: move;
+}
+
+.both7 .card-text{
+  padding-bottom: 5px;
+}
+
+.day{
+  height: 220px;
+}
+
+.day form{
+  padding: 0px;
+  margin:0;
+}
+
+.zone{
+  margin:0;
+  padding: 0;
+  height: 160px;
+  width: 500px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+.zone .card{
+  width: 200px;
+  height: 150px;
+}
+
