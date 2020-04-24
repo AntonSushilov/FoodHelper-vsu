@@ -6,7 +6,6 @@
 
 
     <div class="container">
-
         <div class="cards">
             @foreach ($products as $product)
             <a href="{{route('product', ['product'=>$product->id])}}" class="card">

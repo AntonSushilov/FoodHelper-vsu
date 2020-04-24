@@ -859,64 +859,62 @@ table {
   width: 270px;
 }
 
-.left{
+.left {
   width: 49%;
 }
 
-.right{
+.right {
   width: 49%;
 }
 
-.both7{
+.both7 {
   display: flex;
   justify-content: space-between;
 }
 
-.both7 .jumbotron{
+.both7 .jumbotron {
   padding-top: 10px;
 }
 
-.up{
+.up {
   margin-bottom: 20px;
 }
 
-.cardss{
-
+.cardss {
   display: flex;
 }
 
-.card{
+.card {
   width: 200px;
   height: 150px;
   cursor: move;
 }
 
-.both7 .card-text{
+.both7 .card-text {
   padding-bottom: 5px;
 }
 
-.day{
+.day {
   height: 220px;
 }
 
-.day form{
+.day form {
   padding: 0px;
-  margin:0;
+  margin: 0;
 }
 
-.zone{
-  margin:0;
+.zone {
+  margin: 0;
   padding: 0;
   height: 160px;
   width: 500px;
-  display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
   display: flex;
 }
 
-.zone .card{
+.zone .card {
   width: 200px;
   height: 150px;
 }

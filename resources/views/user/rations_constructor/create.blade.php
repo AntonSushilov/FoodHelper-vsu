@@ -13,18 +13,17 @@
                        <input class="find" type="text" id="myInputId" onkeyup="searchId()" placeholder="Поиск по продуктам">
                     </div>
                     <div class="cardss" id="divLeft1">
-                        <div class="card" draggable="true" ondragstart="drag(event)" id="drag1">
-                            <img class="card-image" src="../../public/img/dim.jpg" alt="Фото продукта">
-                            <div class="card-text" id="mydivheader">
-                                <p >котлета</p>
+                        @foreach ($products as $product)
+                            <div class="card" draggable="true" ondragstart="drag(event)" id="{{$product->id}}">
+                                <input type="text" placeholder="Граммы" name="mass1[]">
+                                <img class="card-image" src="{{ asset('/storage/'. $product->path_foto)}}" alt="Фото продукта">
+                                <div class="card-text" id="mydivheader">
+                                    <p >{{$product->title}}</p>
+
+
+                                </div>
                             </div>
-                        </div>
-                        <div class="card" draggable="true" ondragstart="drag(event)" id="drag2" >
-                            <img class="card-image" src="../../public/img/dim.jpg" alt="Фото продукта">
-                            <div class="card-text" id="mydivheader">
-                                <p >котлета</p>
-                            </div>
-                        </div>
+                        @endforeach
 
                     </div>
 
@@ -35,40 +34,46 @@
                        <input class="find" type="text" id="myInputId" onkeyup="searchId()" placeholder="Поиск по блюдам">
                    </div>
                    <div class="cardss" id="divLeft1">
-                        <div class="card" draggable="true" ondragstart="drag(event)" id="drag1">
-                            <img class="card-image" src="../../public/img/dim.jpg" alt="Фото продукта">
+                    @foreach ($dishes as $dish)
+                        <div class="card" draggable="true" ondragstart="drag(event)" id="{{$dish->id}}">
+                            <img class="card-image" src="{{ asset('/storage/'. $dish->path_foto)}}" alt="Фото продукта">
                             <div class="card-text">
-                                <p >Котлеты</p>
+                                <p >{{$dish->title}}</p>
                             </div>
                         </div>
+                    @endforeach
                     </div>
                </div>
            </div>
            <div class="right" id="divRight">
+            <form class="form-horizontal" action="{{route(user.rations_constructor.store')}}" method="post">
+            {{ csrf_field() }}
                 <div class="day jumbotron" >
                   <h3>Завтрак</h3>
-                  <form action="" >
+
                      <div class="zone" id="divRight1" ondrop="drop(event)" ondragover="allowDrop(event)">
 
                      </div>
-                  </form>
+
                 </div>
                 <div class="day jumbotron">
                   <h3>Обед</h3>
-                  <form action="">
+
                      <div class="zone" id="divRight2" ondrop="drop(event)" ondragover="allowDrop(event)">
 
                      </div>
-                  </form>
+
                 </div>
                 <div class="day jumbotron">
                   <h3>Ужин</h3>
-                  <form action="">
+
                      <div class="zone" id="divRight3" ondrop="drop(event)" ondragover="allowDrop(event)">
 
                      </div>
-                  </form>
+
                 </div>
+                <input class="btn btn-primary" type="submit" value="Сохранить">
+            </form>
            </div>
        </div>
    </div>

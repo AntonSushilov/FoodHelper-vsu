@@ -23,15 +23,9 @@ Route::group(['namespase' => 'guest'], function () {
     Route::get('/rations/{ration}','FoodHelperController@rationShow')->name('ration');
 });
 
-Route::group(['prefix'=>'user','namespase' => 'user', 'middleware'=>['auth']], function () {
-    Route::resource('/ration', 'RationController', ['as'=>'user']);
-    Route::get('/home', function () {
-        return view('user.home');
-    })->name('home');
+Route::group(['prefix'=>'user', 'namespace'=>'User', 'middleware'=>['auth']], function () {
+    Route::resource('/ration_constructor', 'RationConstructorController', ['as'=>'user']);
 
-    Route::get('/ration_constructor', function () {
-        return view('user.ration_constructor');
-    })->name('ration_constructor');
 });
 
 

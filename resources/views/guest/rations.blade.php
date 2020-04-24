@@ -6,6 +6,9 @@
 
 
     <div class="container">
+
+        <a class="btn btn-block btn-default" href="{{route('user.ration_constructor.create')}}">Создать рацион</a>
+
         <div class="cards">
             @foreach ($rations as $ration)
             <a href="{{route('ration', ['ration'=>$ration->id])}}" class="card">
