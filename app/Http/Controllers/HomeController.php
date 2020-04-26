@@ -25,17 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if($rations = Ration::first() === null){
-            return view('user.home',[
-                'rations' => 'нет данных'
-            ]);
-        }
-        else{
-            $rations = Ration::first()->paginate(15);
+        $rations = Ration::with('user','product','dish')->where('user_id',auth()->user()->id)->get();
 
             return view('user.home', [
                 'rations' => $rations
             ]);
-        }
     }
 }
