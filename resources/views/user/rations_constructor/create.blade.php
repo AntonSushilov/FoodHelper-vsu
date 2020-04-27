@@ -64,7 +64,7 @@
                             <div class="card" draggable="true" ondragstart="drag(event)" >
                             <span class="close" id="delete"></span>
                             <div class="card-text">
-                                <p >йцуйцу wqe</p>
+                                <p >йцуйцу парпрwqe</p>
                             </div>
                             <input type="text" placeholder="Граммы" name="mass1[]">
                         </div>
