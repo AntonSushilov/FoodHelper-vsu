@@ -5,56 +5,108 @@
 @section('content')
 
 <div class="container">
-    <p class="draggable" draggable="true">1</p>
-    <p class="draggable" draggable="true">2</p>
-  </div>
-  <div class="container">
-    <p class="draggable" draggable="true">3</p>
-    <p class="draggable" draggable="true">4</p>
-  </div>
+
+    <div class="app">
+		<div class="lists">
+
+			<div class="list">
+                <div class="both7 up">
+                    <h3>Продукты</h3>
+                    <input class="find" type="text" id="myInputId" onkeyup="searchId()" placeholder="Поиск по продуктам">
+                 </div>
+                 @foreach ($products as $product)
+                 <div class="list-item" draggable="true" id="{{$product->id}}">
+                     <input type="text" placeholder="Граммы" name="mass1[]">
+                     <img class="card-image" src="{{ asset('/storage/'. $product->path_foto)}}" alt="Фото продукта">
+                     <div class="card-text" id="mydivheader">
+                         <p >{{$product->title}}</p>
+
+
+                     </div>
+                 </div>
+             @endforeach
+				<div class="list-item" draggable="true">List item 1</div>
+				<div class="list-item" draggable="true">List item 2</div>
+				<div class="list-item" draggable="true">List item 3</div>
+			</div>
+            <div class="list"></div>
+
+        </div>
+        <div class="lists">
+
+			<div class="list">
+                <div class="both7 up">
+                    <h3>Блюда</h3>
+                    <input class="find" type="text" id="myInputId" onkeyup="searchId()" placeholder="Поиск по продуктам">
+                 </div>
+                 @foreach ($dishes as $dish)
+                 <div class="list-item" draggable="true" id="{{$dish->id}}">
+                     <img class="card-image" src="{{ asset('/storage/'. $dish->path_foto)}}" alt="Фото продукта">
+                     <div class="card-text">
+                         <p >{{$dish->title}}</p>
+                     </div>
+                 </div>
+             @endforeach
+				<div class="list-item" draggable="true">List item 1</div>
+				<div class="list-item" draggable="true">List item 2</div>
+				<div class="list-item" draggable="true">List item 3</div>
+			</div>
+            <div class="list"></div>
+
+		</div>
+	</div>
+
+
+
 
 
 
 
 <script>
-    const draggables = document.querySelectorAll('.draggable')
-const containers = document.querySelectorAll('.container')
+    const list_items = document.querySelectorAll('.list-item');
+const lists = document.querySelectorAll('.list');
 
-draggables.forEach(draggable => {
-  draggable.addEventListener('dragstart', () => {
-    draggable.classList.add('dragging')
-  })
+let draggedItem = null;
 
-  draggable.addEventListener('dragend', () => {
-    draggable.classList.remove('dragging')
-  })
-})
+for (let i = 0; i < list_items.length; i++) {
+	const item = list_items[i];
 
-containers.forEach(container => {
-  container.addEventListener('dragover', e => {
-    e.preventDefault()
-    const afterElement = getDragAfterElement(container, e.clientY)
-    const draggable = document.querySelector('.dragging')
-    if (afterElement == null) {
-      container.appendChild(draggable)
-    } else {
-      container.insertBefore(draggable, afterElement)
-    }
-  })
-})
+	item.addEventListener('dragstart', function () {
+		draggedItem = item;
+		setTimeout(function () {
+			item.style.display = 'none';
+		}, 0)
+	});
 
-function getDragAfterElement(container, y) {
-  const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')]
+	item.addEventListener('dragend', function () {
+		setTimeout(function () {
+			draggedItem.style.display = 'block';
+			draggedItem = null;
+		}, 0);
+	})
 
-  return draggableElements.reduce((closest, child) => {
-    const box = child.getBoundingClientRect()
-    const offset = y - box.top - box.height / 2
-    if (offset < 0 && offset > closest.offset) {
-      return { offset: offset, element: child }
-    } else {
-      return closest
-    }
-  }, { offset: Number.NEGATIVE_INFINITY }).element
+	for (let j = 0; j < lists.length; j ++) {
+		const list = lists[j];
+
+		list.addEventListener('dragover', function (e) {
+			e.preventDefault();
+		});
+
+		list.addEventListener('dragenter', function (e) {
+			e.preventDefault();
+			this.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+		});
+
+		list.addEventListener('dragleave', function (e) {
+			this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+		});
+
+		list.addEventListener('drop', function (e) {
+			console.log('drop');
+			this.append(draggedItem);
+			this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+		});
+	}
 }
 </script>
 
