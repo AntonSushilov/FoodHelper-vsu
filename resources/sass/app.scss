@@ -373,6 +373,7 @@ table{
 
 .both7{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -385,8 +386,10 @@ table{
 }
 
 .cardss{
-
-  display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    height: 250px;
+    overflow: auto;
 }
 
 .card{
@@ -408,20 +411,23 @@ table{
   margin:0;
 }
 
-.zone{
-  margin:0;
-  padding: 0;
-  height: 160px;
-  width: 500px;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
+.zone {
+    margin:0;
+    padding: 0;
+    height: 160px;
+    width: 500px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: hotpink;
 }
 
 .zone .card{
   width: 200px;
   height: 150px;
-}
 
+}

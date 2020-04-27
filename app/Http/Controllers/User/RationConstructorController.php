@@ -52,7 +52,54 @@ class RationConstructorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ration = Ration::create([
+            'user_id'=>auth()->user()->id,
+            'title'=>$request->title,
+            'info'=>$request->info
+        ]);
+            //breakfast
+        $var = 0;
+        $br = explode(",", $request->arr[0]);
+        for($i=0;$i<count($br);$i++){
+            if(is_numeric($br[$i])){
+                $ration->product()->attach($br[$i], ['mass' => $request->mass1[$var], 'food' => 'Завтрак']);
+                $var++;
+            }
+            else{
+                $br[$i] = substr($br[$i], 1);
+                $ration->dish()->attach($br[$i], ['food' => 'Завтрак']);
+            }
+
+        }
+
+        $ln = explode(",", $request->arr[1]);
+        for($i=0;$i<count($ln);$i++){
+            if(is_numeric($ln[$i])){
+                $ration->product()->attach($ln[$i], ['mass' => $request->mass1[$var], 'food' => 'Обед']);
+                $var++;
+            }
+            else{
+                $ln[$i] = substr($ln[$i], 1);
+                $ration->dish()->attach($ln[$i], ['food' => 'Обед']);
+            }
+
+        }
+
+
+        $din = explode(",", $request->arr[2]);
+        for($i=0;$i<count($din);$i++){
+            if(is_numeric($din[$i])){
+                $ration->product()->attach($din[$i], ['mass' => $request->mass1[$var], 'food' => 'Ужин']);
+                $var++;
+            }
+            else{
+                $din[$i] = substr($din[$i], 1);
+                $ration->dish()->attach($din[$i], ['food' => 'Ужин']);
+            }
+
+        }
+
+        return redirect()->route('home');
     }
 
     /**

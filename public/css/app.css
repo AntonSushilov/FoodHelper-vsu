@@ -869,6 +869,7 @@ table {
 
 .both7 {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -882,10 +883,12 @@ table {
 
 .cardss {
   display: flex;
+  flex-wrap: wrap;
+  height: 250px;
+  overflow: auto;
 }
 
-
-.both7 .card{
+.card {
   width: 200px;
   height: 150px;
   cursor: move;
@@ -912,7 +915,10 @@ table {
   display: -moz-flex;
   display: -ms-flex;
   display: -o-flex;
+  overflow: auto;
   display: flex;
+  flex-wrap: wrap;
+  background-color: hotpink;
 }
 
 .zone .card {
