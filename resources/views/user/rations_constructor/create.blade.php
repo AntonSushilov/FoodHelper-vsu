@@ -10,7 +10,7 @@
            <div class="left">
 
                <div class="prod jumbotron" id="divLeft1">
-                   <div class="both7 up">
+                    <div class="both7 up">
                        <h3>Продукты</h3>
                        <input class="find" type="text" id="myInputId" onkeyup="searchId()" placeholder="Поиск по продуктам">
                     </div>
@@ -18,12 +18,11 @@
 
                         @foreach ($products as $product)
                             <div class="card" draggable="true" ondragstart="drag(event)" id="{{$product->id}}">
-                                <span class="close" id="delete"></span>
+                                <input type="text" placeholder="Граммы" name="mass1[]">
                                 <img class="card-image" id="{{$product->id}}" src="{{ asset('/storage/'. $product->path_foto)}}" alt="Фото продукта">
                                 <div class="card-text">
                                     <p >{{$product->title}}</p>
-                                </div> 
-                                <input type="text" placeholder="Граммы" name="mass1[]">
+                                </div>
                             </div>
                         @endforeach
 
@@ -38,12 +37,10 @@
                    <div class="cardss" id="divLeft2">
                     @foreach ($dishes as $dish)
                         <div class="card" draggable="true" ondragstart="drag(event)" id="a{{$dish->id}}">
-                            <span class="close" id="delete"></span>
                             <img class="card-image" id="a{{$dish->id}}" src="{{ asset('/storage/'. $dish->path_foto)}}" alt="Фото продукта">
                             <div class="card-text">
                                 <p >{{$dish->title}}</p>
                             </div>
-                            <input type="text" placeholder="Граммы" name="mass1[]">
                         </div>
                     @endforeach
                     </div>
@@ -61,13 +58,6 @@
                   <h3>Завтрак</h3>
                         <div class="zone" id="divRight1" ondrop="drop(event)" ondragover="allowDrop(event)" name="breakfast[]">
                             <input type="hidden" id="atr" name="arr[]" value="">
-                            <div class="card" draggable="true" ondragstart="drag(event)" >
-                            <span class="close" id="delete"></span>
-                            <div class="card-text">
-                                <p >йцуйцу wqe</p>
-                            </div>
-                            <input type="text" placeholder="Граммы" name="mass1[]">
-                        </div>
                         </div>
                 </div>
                 <div class="day jumbotron">
@@ -152,10 +142,6 @@ function drop(ev) {
     ev.stopPropagation();
     return false;
 }
-
-$('.close').click(function () {
-$('h3').remove();
-});
 </script>
 
 

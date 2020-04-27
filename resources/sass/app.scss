@@ -363,129 +363,71 @@ table{
 }
 
 
-.left {
+.left{
   width: 49%;
 }
 
-.right {
+.right{
   width: 49%;
 }
 
-.both7 {
+.both7{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.both7 .jumbotron {
+.both7 .jumbotron{
   padding-top: 10px;
 }
 
-.up {
+.up{
   margin-bottom: 20px;
 }
 
-.cardss {
-  display: flex;
-  flex-wrap: wrap;
-  height: 240px;
-  overflow: auto;
+.cardss{
+    display: flex;
+    flex-wrap: wrap;
+    height: 250px;
+    overflow: auto;
 }
 
-.both7 .card {
+.card{
   width: 200px;
-  height: 217px;
+  height: 150px;
   cursor: move;
 }
 
-.both7 .card-text {
-  padding-bottom: 0px;
-  font-size: 12px;
+.both7 .card-text{
+  padding-bottom: 5px;
 }
 
-.day {
-  height: 310px;
+.day{
+  height: 220px;
 }
 
-.day form {
+.day form{
   padding: 0px;
-  margin: 0;
+  margin:0;
 }
 
 .zone {
-  margin: 0;
-  padding: 0;
-  height: 250px;
-  width: 450px;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  overflow: auto;
-  display: flex;
-  flex-wrap: wrap;
-  
+    margin:0;
+    padding: 0;
+    height: 160px;
+    width: 500px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: hotpink;
 }
 
-.zone .card {
+.zone .card{
   width: 200px;
-  height: 217px;
-  cursor: move;
-}
+  height: 150px;
 
-.both7 img{
-  height: 111px;
-  width: 146px;
-}
-
-.both7 .card input {
-  position: absolute;
-  bottom:0;
-  width:100%;
-}
-
-.right input{
-  margin-bottom: 10px;
-}
-
-.right textarea{
-  margin-bottom: 10px;
-}
-
-.right .card input {
-  position: absolute;
-  bottom:0;
-  width:100%;
-  margin: 0px;
-}
-
-
-.close {
-position: absolute;
-right: 5px;
-top: 5px;
-width: 32px;
-height: 32px;
-opacity: 0.3;
-cursor: default;
-}
-.close:hover {
-opacity: 1;
-}
-.close:before, .close:after {
-position: absolute;
-left: 15px;
-content: ' ';
-height: 33px;
-width: 2px;
-background-color: #333;
-}
-.close:before {
-transform: rotate(45deg);
-}
-.close:after {
-transform: rotate(-45deg);
-}
-
-.left .close{
-  display: none;
 }
