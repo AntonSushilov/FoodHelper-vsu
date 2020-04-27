@@ -363,65 +363,27 @@ table{
 }
 
 
-.left{
-  width: 49%;
-}
 
-.right{
-  width: 49%;
-}
+///////////////////////////////////
 
-.both7{
-  display: flex;
-  justify-content: space-between;
-}
+body {
+    margin: 0;
+  }
 
-.both7 .jumbotron{
-  padding-top: 10px;
-}
+  .container {
+    background-color: #333;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
 
-.up{
-  margin-bottom: 20px;
-}
+  .draggable {
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid black;
+    cursor: move;
+  }
 
-.cardss{
-
-  display: flex;
-}
-
-.card{
-  width: 200px;
-  height: 150px;
-  cursor: move;
-}
-
-.both7 .card-text{
-  padding-bottom: 5px;
-}
-
-.day{
-  height: 220px;
-}
-
-.day form{
-  padding: 0px;
-  margin:0;
-}
-
-.zone{
-  margin:0;
-  padding: 0;
-  height: 160px;
-  width: 500px;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-}
-
-.zone .card{
-  width: 200px;
-  height: 150px;
-}
+  .draggable.dragging {
+    opacity: .5;
+  };
 
