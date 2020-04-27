@@ -10,20 +10,22 @@
            <div class="left">
 
                <div class="prod jumbotron" id="divLeft1">
-                    <div class="both7 up">
+                   <div class="both7 up">
                        <h3>Продукты</h3>
                        <input class="find" type="text" id="myInputId" onkeyup="searchId()" placeholder="Поиск по продуктам">
                     </div>
                     <div class="cardss" id="divLeft1">
 
                         @foreach ($products as $product)
-                            <div class="card" draggable="true" ondragstart="drag(event)" id="{{$product->id}}">
-                                <input type="text" placeholder="Граммы" name="mass1[]">
-                                <img class="card-image" id="{{$product->id}}" src="{{ asset('/storage/'. $product->path_foto)}}" alt="Фото продукта">
-                                <div class="card-text">
-                                    <p >{{$product->title}}</p>
-                                </div>
+                        <div class="card" draggable="true" ondragstart="drag(event)" id="{{$product->id}}">
+
+                            <img class="card-image" id="{{$product->id}}" src="{{ asset('/storage/'. $product->path_foto)}}" alt="Фото продукта">
+                            <div class="card-text">
+                                <p >{{$product->title}}</p>
                             </div>
+                            <input type="text" placeholder="Граммы" name="mass1[]">
+
+                        </div>
                         @endforeach
 
                     </div>
@@ -37,6 +39,7 @@
                    <div class="cardss" id="divLeft2">
                     @foreach ($dishes as $dish)
                         <div class="card" draggable="true" ondragstart="drag(event)" id="a{{$dish->id}}">
+                            <span class="close" id="a{{$dish->id}}"></span>
                             <img class="card-image" id="a{{$dish->id}}" src="{{ asset('/storage/'. $dish->path_foto)}}" alt="Фото продукта">
                             <div class="card-text">
                                 <p >{{$dish->title}}</p>
@@ -46,6 +49,11 @@
                     </div>
                </div>
            </div>
+
+
+
+
+
            <div class="right" id="divRight">
             <form class="form-horizontal" action="{{route('user.ration_constructor.store')}}" method="post" id="form">
                 {{ csrf_field() }}
@@ -56,13 +64,15 @@
 
                 <div class="day jumbotron" >
                   <h3>Завтрак</h3>
+                  <input type="button" value="Очистить" onclick="but1()">
                         <div class="zone" id="divRight1" ondrop="drop(event)" ondragover="allowDrop(event)" name="breakfast[]">
                             <input type="hidden" id="atr" name="arr[]" value="">
+
                         </div>
                 </div>
                 <div class="day jumbotron">
                   <h3>Обед</h3>
-
+                  <input type="button" value="Очистить" onclick="but2()">
                      <div class="zone" id="divRight2" ondrop="drop(event)" ondragover="allowDrop(event)">
                         <input type="hidden" id="atr2" name="arr[]" value="">
                      </div>
@@ -70,14 +80,14 @@
                 </div>
                 <div class="day jumbotron">
                   <h3>Ужин</h3>
-
+                  <input type="button" value="Очистить" onclick="but3()">
                      <div class="zone" id="divRight3" ondrop="drop(event)" ondragover="allowDrop(event)">
                         <input type="hidden" id="atr3" name="arr[]" value="">
                      </div>
 
                 </div>
 
-                <input class="btn btn-primary" type="submit" value="Сохранить" id="click">
+                <input class="btn" type="submit" value="Сохранить" id="click">
             </form>
            </div>
        </div>
@@ -85,6 +95,8 @@
 
 
 <script>
+
+
     click.onclick = function() {
 
         let breakfast = [];
@@ -121,27 +133,48 @@
 
     };
 
+    function but1() {
+        var element = document.getElementById("divRight1");
+        while (element.firstChild) {
+         element.removeChild(element.firstChild);
+        }
+    }
+    function but2() {
+        var element = document.getElementById("divRight2");
+        while (element.firstChild) {
+         element.removeChild(element.firstChild);
+        }
+    }
+    function but3() {
+        var element = document.getElementById("divRight3");
+        while (element.firstChild) {
+         element.removeChild(element.firstChild);
+        }
+    }
+
+    function allowDrop(ev) {
+        ev.preventDefault();
+
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
 
 
-function allowDrop(ev) {
-    ev.preventDefault();
-}
+    }
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+
+        var nodeCopy = document.getElementById(data).cloneNode(true);
+        ev.target.appendChild(nodeCopy);
+        ev.stopPropagation();
 
 
-}
+        return false;
+    }
 
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-
-    var nodeCopy = document.getElementById(data).cloneNode(true);
-    ev.target.appendChild(nodeCopy);
-    ev.stopPropagation();
-    return false;
-}
 </script>
 
 
