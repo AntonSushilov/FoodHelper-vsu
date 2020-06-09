@@ -27,24 +27,17 @@
 
     </div>
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-6">
 			<div class="jumbotron">
 				<p><span class="label label-primary">Рационов {{$rationCount}}</span></p>
 			</div>
 		</div>
-    </div>
-
-	<div class="row">
 		<div class="col-sm-6">
 			<div class="jumbotron">
 				<p><span class="label label-primary">Зарегистрировано пользователей {{$userCount}}</span></p>
 			</div>
 		</div>
-		<div class="col-sm-6">
-			<div class="jumbotron">
-				<p><span class="label label-primary">Сегодня 0</span></p>
-			</div>
-		</div>
+
 	</div>
 	<div class="row see">
         <div class="col-sm-6">

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title','Продукты'.' - FoodHelper')
+
 @section('content')
 
 
@@ -10,9 +12,9 @@
                 <img class="card-image" src="{{ asset('/storage/'. $dish->path_foto)}}" alt="Фото продукта">
                 <div class="card-text">
                     <div class="card-heading">
-                        <h3 class="card-title">{{$dish->title}}</h3>
+                        <h3 class="card-title clip">{{$dish->title}}</h3>
                     </div>
-                    <div class="card-info">
+                    <div class="card-info clip">
                         {{$dish->info}}
                     </div>
                 </div>

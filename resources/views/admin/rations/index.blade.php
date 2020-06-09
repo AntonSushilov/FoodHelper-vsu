@@ -114,15 +114,7 @@
                 </tr>
             @endforelse
         </tbody>
-        <tfoot>
-            <tr>
-                <td>
-                    <ul class="pagination pull-right">
-                        {{$rations->links()}}
-                    </ul>
-                </td>
-            </tr>
-        </tfoot>
+
     </table>
 
 <script>

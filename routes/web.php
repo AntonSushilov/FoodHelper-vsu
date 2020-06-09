@@ -29,7 +29,7 @@ Route::group(['prefix'=>'user', 'namespace'=>'User', 'middleware'=>['auth']], fu
 });
 
 
-Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function(){
+Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth','root']], function(){
 	Route::get('/', 'DashboardController@dashboard')->name('admin.index');
     Route::resource('/food', 'FoodController', ['as'=>'admin']);
     Route::resource('/category', 'CategoryController', ['as'=>'admin']);

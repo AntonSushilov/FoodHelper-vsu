@@ -64,15 +64,6 @@
 				</tr>
 			@endforelse
 		</tbody>
-		<tfoot>
-			<tr>
-				<td>
-					<ul class="pagination pull-right">
-						{{$products->links()}}
-					</ul>
-				</td>
-			</tr>
-		</tfoot>
 	</table>
 
 <script>
