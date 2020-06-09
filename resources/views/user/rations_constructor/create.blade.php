@@ -53,7 +53,7 @@
 
 
 
-
+ 
            <div class="right" id="divRight">
             <form class="form-horizontal" action="{{route('user.ration_constructor.store')}}" method="post" id="form">
                 {{ csrf_field() }}
