@@ -20,5 +20,8 @@ class Ration extends Model
     	return $this->belongsTo('App\User');
     }
 
+    public function selectUser(){
+    	return $this->belongsToMany('App\User', 'ration_user');
+    }
 
 }

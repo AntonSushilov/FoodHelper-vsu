@@ -123,7 +123,16 @@ class RationConstructorController extends Controller
      */
     public function edit(Ration $ration)
     {
-        //
+        return view('user.rations_constructor.update',[
+            'id' => $ration->id,
+            'title'=>$ration->title,
+            'info'=>$ration->info,
+            'products'=>Product::all(),
+            'dishes'=>Dish::all(),
+            'product_ration'=>$ration->product,
+            'dish_ration'=>$ration->dish
+
+        ]);
     }
 
     /**
@@ -135,7 +144,57 @@ class RationConstructorController extends Controller
      */
     public function update(Request $request, Ration $ration)
     {
-        //
+        $ration->update([
+            'title'=>$request->title,
+            'info'=>$request->info
+        ]);
+        $ration->product()->detach();
+        $ration->dish()->detach();
+
+        $var = 0;
+
+        $br = explode(",", $request->arr1[0]);
+        for($i=0;$i<count($br);$i++){
+            if(is_numeric($br[$i])){
+                $ration->product()->attach($br[$i], ['mass' => $request->mass1[$var], 'food' => 'Завтрак']);
+                $var++;
+            }
+            else{
+                $br[$i] = substr($br[$i], 1);
+                $ration->dish()->attach($br[$i], ['food' => 'Завтрак']);
+            }
+
+        }
+
+        $ln = explode(",", $request->arr2[0]);
+        for($i=0;$i<count($ln);$i++){
+            if(is_numeric($ln[$i])){
+                $ration->product()->attach($ln[$i], ['mass' => $request->mass1[$var], 'food' => 'Обед']);
+                $var++;
+            }
+            else{
+                $ln[$i] = substr($ln[$i], 1);
+                $ration->dish()->attach($ln[$i], ['food' => 'Обед']);
+            }
+
+        }
+
+
+        $din = explode(",", $request->arr3[0]);
+
+        for($i=0;$i<count($din);$i++){
+            if(is_numeric($din[$i])){
+                $ration->product()->attach($din[$i], ['mass' => $request->mass1[$var], 'food' => 'Ужин']);
+                $var++;
+            }
+            else{
+                $din[$i] = substr($din[$i], 1);
+                $ration->dish()->attach($din[$i], ['food' => 'Ужин']);
+            }
+
+        }
+        return redirect()->route('home');
+
     }
 
     /**
@@ -146,6 +205,10 @@ class RationConstructorController extends Controller
      */
     public function destroy(Ration $ration)
     {
-        //
+        $ration->product()->detach();
+        $ration->dish()->detach();
+        $ration->delete();
+
+        return redirect()->route('home');
     }
 }
