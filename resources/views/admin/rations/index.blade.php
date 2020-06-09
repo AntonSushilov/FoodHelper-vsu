@@ -17,19 +17,21 @@
 
 
 	<a href="{{route('admin.ration.create')}}" class="btn btn-primary pull-right bot"><i class="fafa-plus-square-o"></i>Создать рацион</a>
-	<table class="table table-striped" id="myTable">
-		<thead>
+
+</div>
+<table class="table table-striped" id="myTable">
+        <thead>
             <th>ID</th>
             <th>Имя</th>
             <th>Название</th>
             <th>Информация</th>
             <th>Рацион</th>
-			<th class="text-center">Действия</th>
-		</thead>
-		<tbody>
-			@forelse($rations as $ration)
-				<tr>
-					<td>{{$ration->id}}</td>
+            <th class="text-center">Действия</th>
+        </thead>
+        <tbody>
+            @forelse($rations as $ration)
+                <tr>
+                    <td>{{$ration->id}}</td>
                     <td>{{$ration->user->name}}</td>
                     <td>{{$ration->title}}</td>
                     <td>{{$ration->info}}</td>
@@ -93,37 +95,27 @@
 
 
                     </td>
-					<td class="text-right">
-						<form onsubmit="if(confirm('Удалить?')){return true }else{ return false}" action="{{route('admin.ration.destroy', $ration)}}" method="post">
-							<input type="hidden" name="_method" value="DELETE">
-							{{ csrf_field() }}
+                    <td class="text-right">
+                        <form onsubmit="if(confirm('Удалить?')){return true }else{ return false}" action="{{route('admin.ration.destroy', $ration)}}" method="post">
+                            <input type="hidden" name="_method" value="DELETE">
+                            {{ csrf_field() }}
 
-							<a class="btn btn-default" href="{{route('admin.ration.edit', $ration->id)}}"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-default" href="{{route('admin.ration.edit', $ration->id)}}"><i class="fa fa-edit"></i></a>
 
-							<button type="submit" class="btn btn-default"><i class="fa fa-trash-o"></i></button>
-						</form>
+                            <button type="submit" class="btn btn-default"><i class="fa fa-trash-o"></i></button>
+                        </form>
 
 
-					</td>
-				</tr>
-			@empty
-				<tr>
-					<td colspan="6" class="text-center"><h2>Данные отсутствуют</h2></td>
-				</tr>
-			@endforelse
-		</tbody>
-		<tfoot>
-			<tr>
-				<td>
-					<ul class="pagination pull-right">
-						{{$rations->links()}}
-					</ul>
-				</td>
-			</tr>
-		</tfoot>
-	</table>
-</div>
+                    </td>
+                </tr>
+            @empty
+                <tr>
+                    <td colspan="6" class="text-center"><h2>Данные отсутствуют</h2></td>
+                </tr>
+            @endforelse
+        </tbody>
 
+    </table>
 
 <script>
     function searchId() {

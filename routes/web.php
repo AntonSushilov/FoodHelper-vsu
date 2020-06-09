@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['namespase' => 'user'], function () {
+Route::group(['namespase' => 'guest'], function () {
     Route::get('/products','FoodHelperController@productIndex')->name('products');
     Route::get('/products/{product}','FoodHelperController@productShow')->name('product');
 
@@ -23,10 +23,15 @@ Route::group(['namespase' => 'user'], function () {
     Route::get('/rations/{ration}','FoodHelperController@rationShow')->name('ration');
 });
 
+Route::group(['prefix'=>'user', 'namespace'=>'User', 'middleware'=>['auth']], function () {
+    Route::resource('/ration_constructor', 'RationConstructorController', ['as'=>'user']);
 
 
+});
+Route::get('/favorite/{ration}', 'SelectRationController@toggle', ['as'=>'user'])->name('favorite');
 
-Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function(){
+
+Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth','root']], function(){
 	Route::get('/', 'DashboardController@dashboard')->name('admin.index');
     Route::resource('/food', 'FoodController', ['as'=>'admin']);
     Route::resource('/category', 'CategoryController', ['as'=>'admin']);
@@ -37,20 +42,20 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], 
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('guest.welcome');
 })->name('welcome');
 
 Route::get('/about', function () {
-    return view('about');
+    return view('guest.about');
 })->name('about');
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('guest.contact');
 })->name('contact');
 
 
 Route::get('/add', function () {
-    return view('add');
+    return view('guest.add');
 })->name('add');
 
 

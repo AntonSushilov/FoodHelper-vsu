@@ -16,7 +16,8 @@ class Dish extends Model
     	return $this->belongsToMany('App\Product', 'dish_product')->withPivot('mass');
     }
 
-    public function food(){
-    	return $this->belongsToMany('App\Food')->withPivot('food');
+    public function ration(){
+    	return $this->belongsToMany('App\Ration', 'dish_ration')->withPivot('food');
     }
+
 }

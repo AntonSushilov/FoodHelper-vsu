@@ -60,7 +60,7 @@
                             </div>
                         </div>
                     </form>
-                <img class="img" src="img/avokadik.jpg" alt="">
+                <img class="img" src="img/logo/avokadik-auth.jpg" alt="">
             </div>
         </div>
 @endsection

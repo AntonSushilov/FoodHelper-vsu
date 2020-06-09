@@ -15,7 +15,10 @@
     </div>
 
 	<a href="{{route('admin.product.create')}}" class="btn btn-primary pull-right bot"><i class="fafa-plus-square-o"></i>Создать продукт</a>
-	<table class="table table-striped" id="myTable">
+
+</div>
+
+<table class="table table-striped" id="myTable">
 		<thead>
 			<th>ID</th>
             <th>Наименование</th>
@@ -61,17 +64,7 @@
 				</tr>
 			@endforelse
 		</tbody>
-		<tfoot>
-			<tr>
-				<td>
-					<ul class="pagination pull-right">
-						{{$products->links()}}
-					</ul>
-				</td>
-			</tr>
-		</tfoot>
 	</table>
-</div>
 
 <script>
     function searchId() {

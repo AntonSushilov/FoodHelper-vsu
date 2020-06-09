@@ -21,7 +21,7 @@ class RationController extends Controller
     public function index()
     {
         return view('admin.rations.index', [
-            'rations' => Ration::with('user','product','dish')->paginate(10)
+            'rations' => Ration::with('user','product','dish')->get()
             ]);
     }
 

@@ -6,24 +6,22 @@
 
 
     <div class="container">
-
         <div class="cards">
-            @foreach ($products as $product)
-            <a href="{{route('product', ['product'=>$product->id])}}" class="card">
-                <img class="card-image" src="{{ asset('/storage/'. $product->path_foto)}}" alt="Фото продукта">
+            @foreach ($dishes as $dish)
+            <a href="{{route('dish', ['dish'=>$dish->id])}}" class="card">
+                <img class="card-image" src="{{ asset('/storage/'. $dish->path_foto)}}" alt="Фото продукта">
                 <div class="card-text">
                     <div class="card-heading">
-                        <h3 class="card-title">{{$product->title}}</h3>
+                        <h3 class="card-title clip">{{$dish->title}}</h3>
                     </div>
                     <div class="card-info clip">
-                        {{$product->info}}
+                        {{$dish->info}}
                     </div>
                 </div>
             </a>
             @endforeach
-
         </div>
+        {{$dishes->links()}}
     </div>
-
 
 @endsection

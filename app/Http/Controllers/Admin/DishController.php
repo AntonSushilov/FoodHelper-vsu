@@ -19,7 +19,7 @@ class DishController extends Controller
     public function index()
     {
         return view('admin.dishes.index', [
-        'dishes' => Dish::with('category','product')->paginate(10)
+        'dishes' => Dish::with('category','product')->get()
         ]);
     }
 

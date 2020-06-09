@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Product;
+use App\Dish;
+use App\Ration;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $rations = Ration::with('user','product','dish')->where('user_id',auth()->user()->id)->get();
+
+        $selectRations = auth()->user()->selectRation;
+
+
+        return view('user.home', [
+            'rations' => $rations,
+            'selectRations' => $selectRations
+        ]);
     }
 }

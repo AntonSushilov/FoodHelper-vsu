@@ -12,7 +12,9 @@ class User extends Authenticatable
     	return $this->hasMany('App\Ration');
     }
 
-
+    public function selectRation(){
+    	return $this->belongsToMany('App\Ration', 'ration_user');
+    }
 
     use Notifiable;
 
