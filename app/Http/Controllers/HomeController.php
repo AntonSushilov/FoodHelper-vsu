@@ -27,8 +27,12 @@ class HomeController extends Controller
     {
         $rations = Ration::with('user','product','dish')->where('user_id',auth()->user()->id)->get();
 
-            return view('user.home', [
-                'rations' => $rations
-            ]);
+        $selectRations = auth()->user()->selectRation;
+
+
+        return view('user.home', [
+            'rations' => $rations,
+            'selectRations' => $selectRations
+        ]);
     }
 }

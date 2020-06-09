@@ -121,16 +121,17 @@ class RationConstructorController extends Controller
      * @param  \App\Ration  $ration
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ration $ration)
+    public function edit(Ration $ration_constructor)
     {
+
         return view('user.rations_constructor.update',[
-            'id' => $ration->id,
-            'title'=>$ration->title,
-            'info'=>$ration->info,
+            'id' => $ration_constructor->id,
+            'title'=>$ration_constructor->title,
+            'info'=>$ration_constructor->info,
             'products'=>Product::all(),
             'dishes'=>Dish::all(),
-            'product_ration'=>$ration->product,
-            'dish_ration'=>$ration->dish
+            'product_ration'=>$ration_constructor->product,
+            'dish_ration'=>$ration_constructor->dish
 
         ]);
     }
@@ -142,26 +143,26 @@ class RationConstructorController extends Controller
      * @param  \App\Ration  $ration
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ration $ration)
+    public function update(Request $request, Ration $ration_constructor)
     {
-        $ration->update([
+        $ration_constructor->update([
             'title'=>$request->title,
             'info'=>$request->info
         ]);
-        $ration->product()->detach();
-        $ration->dish()->detach();
+        $ration_constructor->product()->detach();
+        $ration_constructor->dish()->detach();
 
         $var = 0;
 
         $br = explode(",", $request->arr1[0]);
         for($i=0;$i<count($br);$i++){
             if(is_numeric($br[$i])){
-                $ration->product()->attach($br[$i], ['mass' => $request->mass1[$var], 'food' => 'Завтрак']);
+                $ration_constructor->product()->attach($br[$i], ['mass' => $request->mass1[$var], 'food' => 'Завтрак']);
                 $var++;
             }
             else{
                 $br[$i] = substr($br[$i], 1);
-                $ration->dish()->attach($br[$i], ['food' => 'Завтрак']);
+                $ration_constructor->dish()->attach($br[$i], ['food' => 'Завтрак']);
             }
 
         }
@@ -169,12 +170,12 @@ class RationConstructorController extends Controller
         $ln = explode(",", $request->arr2[0]);
         for($i=0;$i<count($ln);$i++){
             if(is_numeric($ln[$i])){
-                $ration->product()->attach($ln[$i], ['mass' => $request->mass1[$var], 'food' => 'Обед']);
+                $ration_constructor->product()->attach($ln[$i], ['mass' => $request->mass1[$var], 'food' => 'Обед']);
                 $var++;
             }
             else{
                 $ln[$i] = substr($ln[$i], 1);
-                $ration->dish()->attach($ln[$i], ['food' => 'Обед']);
+                $ration_constructor->dish()->attach($ln[$i], ['food' => 'Обед']);
             }
 
         }
@@ -184,12 +185,12 @@ class RationConstructorController extends Controller
 
         for($i=0;$i<count($din);$i++){
             if(is_numeric($din[$i])){
-                $ration->product()->attach($din[$i], ['mass' => $request->mass1[$var], 'food' => 'Ужин']);
+                $ration_constructor->product()->attach($din[$i], ['mass' => $request->mass1[$var], 'food' => 'Ужин']);
                 $var++;
             }
             else{
                 $din[$i] = substr($din[$i], 1);
-                $ration->dish()->attach($din[$i], ['food' => 'Ужин']);
+                $ration_constructor->dish()->attach($din[$i], ['food' => 'Ужин']);
             }
 
         }
@@ -203,11 +204,11 @@ class RationConstructorController extends Controller
      * @param  \App\Ration  $ration
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ration $ration)
+    public function destroy(Ration $ration_constructor)
     {
-        $ration->product()->detach();
-        $ration->dish()->detach();
-        $ration->delete();
+        $ration_constructor->product()->detach();
+        $ration_constructor->dish()->detach();
+        $ration_constructor->delete();
 
         return redirect()->route('home');
     }

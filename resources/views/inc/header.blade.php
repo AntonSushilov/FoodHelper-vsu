@@ -43,7 +43,8 @@
                    <ul class="menu3">
                         <div class="col-lg-1">
 
-                            <li class="list"><img class="imgg" src="img/icons/house.png" alt="">
+                            <li class="list"><img class="imgg" src="{{asset('img/icons/house.png')}}" alt="">
+
                                 <ul class="drop2">
                                     @if (Route::has('login'))
                                     @auth

@@ -26,7 +26,9 @@ Route::group(['namespase' => 'guest'], function () {
 Route::group(['prefix'=>'user', 'namespace'=>'User', 'middleware'=>['auth']], function () {
     Route::resource('/ration_constructor', 'RationConstructorController', ['as'=>'user']);
 
+
 });
+Route::get('/favorite/{ration}', 'SelectRationController@toggle', ['as'=>'user'])->name('favorite');
 
 
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth','root']], function(){
