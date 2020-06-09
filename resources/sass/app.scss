@@ -404,7 +404,7 @@ table{
 }
 
 .day {
-  height: 310px;
+  height: 330px;
 }
 
 .day form {
@@ -505,4 +505,49 @@ transform: rotate(-45deg);
     border: none;
     background: transparent;
     cursor: pointer;
+}
+
+
+.rat a{
+  margin-bottom: 20px;
+}
+
+.rat button{
+  margin-top: 10px;
+}
+
+.rat .red button{
+  background-color: red;
+}
+
+svg{
+  margin-top: 10px;
+  display: block;
+  width: 50px;
+  height: auto;
+  z-index: 9999;
+}
+ 
+#svg_2{
+  fill: transparent; 
+  stroke:#f00;
+  stroke-width:6px;
+  cursor:pointer;
+  transition:fill .3s;
+}
+
+#svg_3{
+  fill: red; 
+  stroke:#f00;
+  stroke-width:6px;
+  cursor:pointer;
+  transition:fill .3s;
+}
+#svg_2.filled{
+  fill:#f00;
+}
+
+.rati svg{
+  margin-bottom: 20px;
+  margin-left: 96%;
 }
