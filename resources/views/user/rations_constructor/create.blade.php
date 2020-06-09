@@ -58,31 +58,33 @@
             <form class="form-horizontal" action="{{route('user.ration_constructor.store')}}" method="post" id="form">
                 {{ csrf_field() }}
                 <label for="">Наименование</label>
-        <input type="text" class="form-control" name="title" placeholder="Название" value="{{$title}}" required>
-        <label for="">Описание</label>
-        <textarea type="text" class="form-control" name="info" value="{{$info}}" required></textarea>
+                <input type="text" class="form-control" name="title" placeholder="Название" value="{{$title}}" required>
+                <label for="">Описание</label>
+                <textarea type="text" class="form-control" name="info" value="{{$info}}" required></textarea>
 
                 <div class="day jumbotron" >
                   <h3>Завтрак</h3>
                   <input type="button" value="Очистить" onclick="but1()">
                         <div class="zone" id="divRight1" ondrop="drop(event)" ondragover="allowDrop(event)" name="breakfast[]">
-                            <input type="hidden" id="atr" name="arr[]" value="">
+                            <input type="hidden" id="atr" name="arr1[]" value="">
 
                         </div>
                 </div>
+
                 <div class="day jumbotron">
                   <h3>Обед</h3>
                   <input type="button" value="Очистить" onclick="but2()">
                      <div class="zone" id="divRight2" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <input type="hidden" id="atr2" name="arr[]" value="">
+                        <input type="hidden" id="atr2" name="arr2[]" value="">
                      </div>
 
                 </div>
+
                 <div class="day jumbotron">
                   <h3>Ужин</h3>
                   <input type="button" value="Очистить" onclick="but3()">
                      <div class="zone" id="divRight3" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <input type="hidden" id="atr3" name="arr[]" value="">
+                        <input type="hidden" id="atr3" name="arr3[]" value="">
                      </div>
 
                 </div>

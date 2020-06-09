@@ -18,7 +18,7 @@ class FoodHelperController extends Controller
             ]);
         }
         else{
-            $products = Product::first()->paginate(15);
+            $products = Product::first()->paginate(12);
             return view('guest.products', [
                 'products' => $products
             ]);
@@ -42,7 +42,7 @@ class FoodHelperController extends Controller
             ]);
         }
         else{
-            $dishes = Dish::first()->paginate(15);
+            $dishes = Dish::first()->paginate(12);
 
             return view('guest.dishes', [
             'dishes' => $dishes
@@ -68,7 +68,7 @@ class FoodHelperController extends Controller
             ]);
         }
         else{
-            $rations = Ration::first()->paginate(15);
+            $rations = Ration::first()->paginate(12);
 
             return view('guest.rations', [
                 'rations' => $rations

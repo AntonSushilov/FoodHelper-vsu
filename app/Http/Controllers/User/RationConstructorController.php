@@ -52,14 +52,17 @@ class RationConstructorController extends Controller
      */
     public function store(Request $request)
     {
+
         $ration = Ration::create([
             'user_id'=>auth()->user()->id,
             'title'=>$request->title,
             'info'=>$request->info
         ]);
+
             //breakfast
         $var = 0;
-        $br = explode(",", $request->arr[0]);
+
+        $br = explode(",", $request->arr1);
         for($i=0;$i<count($br);$i++){
             if(is_numeric($br[$i])){
                 $ration->product()->attach($br[$i], ['mass' => $request->mass1[$var], 'food' => 'Завтрак']);
@@ -72,7 +75,7 @@ class RationConstructorController extends Controller
 
         }
 
-        $ln = explode(",", $request->arr[1]);
+        $ln = explode(",", $request->arr2);
         for($i=0;$i<count($ln);$i++){
             if(is_numeric($ln[$i])){
                 $ration->product()->attach($ln[$i], ['mass' => $request->mass1[$var], 'food' => 'Обед']);
@@ -86,7 +89,8 @@ class RationConstructorController extends Controller
         }
 
 
-        $din = explode(",", $request->arr[2]);
+        $din = explode(",", $request->arr3);
+
         for($i=0;$i<count($din);$i++){
             if(is_numeric($din[$i])){
                 $ration->product()->attach($din[$i], ['mass' => $request->mass1[$var], 'food' => 'Ужин']);
@@ -98,7 +102,7 @@ class RationConstructorController extends Controller
             }
 
         }
-
+        dd($request);
         return redirect()->route('home');
     }
 
