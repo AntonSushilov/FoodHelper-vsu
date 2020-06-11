@@ -18,10 +18,13 @@
                         <div class="card-info">{{$ration->info}}</div>
                     </div>
                 </a>
-                @if (auth()->user()->selectRation->contains($ration))
+                @if (Auth::check())
+                    @if (auth()->user()->selectRation->contains($ration))
                     <a class="" href="{{route('favorite', $ration)}}"><img class="img" src="{{asset('img/icons/heart-s.png')}}" alt=""></a>
-                @else
+                    @else
                     <a class="" href="{{route('favorite', $ration)}}"><img class="img" src="{{asset('img/icons/heart-o.png')}}" alt=""></a>
+                    @endif
+
                 @endif
 
             </div>
