@@ -60,7 +60,7 @@
 				</tr>
 			@empty
 				<tr>
-					<td colspan="11" class="text-center"><h2>Данные отсутствуют</h2></td>
+					<td colspan="11" class="text-center"><h3>Данные отсутствуют</h3></td>
 				</tr>
 			@endforelse
 		</tbody>

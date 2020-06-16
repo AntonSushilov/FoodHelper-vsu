@@ -43,7 +43,7 @@
                             {{$product->title}}&nbsp;{{$product->pivot->mass}}гр<br>
                             @endif
                         @empty
-                            <td colspan="2" class="text-center"><h2>Данные отсутствуют</h2></td>
+                            <td colspan="2" class="text-center"><h3>Данные отсутствуют</h3></td>
                         @endforelse
 
                         <ins>Блюда:</ins><br>
@@ -52,7 +52,7 @@
                             {{$dish->title}}<br>
                             @endif
                         @empty
-                            <h2>Данные отсутствуют</h2>
+                            <h3>Данные отсутствуют</h3>
                         @endforelse
 
                         <b>Обед</b><br>
@@ -62,7 +62,7 @@
                             {{$product->title}}&nbsp;{{$product->pivot->mass}}гр<br>
                             @endif
                         @empty
-                            <td colspan="2" class="text-center"><h2>Данные отсутствуют</h2></td>
+                            <td colspan="2" class="text-center"><h3>Данные отсутствуют</h3></td>
                         @endforelse
 
                         <ins>Блюда:</ins><br>
@@ -71,7 +71,7 @@
                             {{$dish->title}}<br>
                             @endif
                         @empty
-                            <h2>Данные отсутствуют</h2>
+                            <h3>Данные отсутствуют</h3>
                         @endforelse
 
                         <b>Ужин</b><br>
@@ -81,7 +81,7 @@
                             {{$product->title}}&nbsp;{{$product->pivot->mass}}гр<br>
                             @endif
                         @empty
-                            <td colspan="2" class="text-center"><h2>Данные отсутствуют</h2></td>
+                            <td colspan="2" class="text-center"><h3>Данные отсутствуют</h3></td>
                         @endforelse
 
                         <ins>Блюда:</ins><br>
@@ -90,7 +90,7 @@
                             {{$dish->title}}<br>
                             @endif
                         @empty
-                            <h2>Данные отсутствуют</h2>
+                            <h3>Данные отсутствуют</h3>
                         @endforelse
 
 

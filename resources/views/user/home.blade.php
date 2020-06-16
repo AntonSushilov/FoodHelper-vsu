@@ -4,6 +4,7 @@
 <div class="container rat">
     <div class="row justify-content-center">
         <div class="col-md-8">
+<!--
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
@@ -20,8 +21,9 @@
                 </div>
 
             </div>
+-->
             <a class="btn btn-block btn-default" href="{{route('user.ration_constructor.create')}}">Создать рацион</a>
-            <h1>Созданные мной</h1>
+            <h1>Рационы созданные мной</h1>
             <div class="cards">
                 @if ($rations != '[]')
                     @foreach ($rations as $ration)
@@ -57,11 +59,11 @@
 
                     @endforeach
                 @else
-                    <h1>Вы еще не создали ни одного рациона</h1>
+                    <h3>Вы еще не создали ни одного рациона</h3>
                 @endif
 
             </div>
-            <h1>Избранные</h1>
+            <h1>Рационы добавленные в избранные</h1>
 
             <div class="cards">
                 @if ($rations != '[]')
@@ -84,7 +86,7 @@
 
                     @endforeach
                 @else
-                    <h1>Вы еще не создали ни одного рациона</h1>
+                    <h3>Вы еще не создали ни одного рациона</h3>
                 @endif
 
             </div>
