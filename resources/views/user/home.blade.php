@@ -45,7 +45,7 @@
                                     </div>
 
                                 </form>
-                                <form action="{{route('user.ration_constructor.edit', $ration)}}" method="get">
+                                <form action="{{route('user.ration_constructor.edit', $ration)}}" class="bottem" method="get">
                                     {{ csrf_field() }}
 
                                     <button class="btn btn-primary"> Изменить </button>
@@ -80,7 +80,7 @@
 
                             </div>
                         </a>
-                        <a class="" href="{{route('favorite', $ration)}}"><img class="img" src="{{asset('img/icons/heart-s.png')}}" alt=""></a>
+                        <a class="" href="{{route('favorite', $ration)}}"><img class="img" src="{{asset('img/icons/health-s.png')}}" alt=""></a>
                     </div>
 
 

@@ -1015,6 +1015,34 @@ table {
   background-color: red;
 }
 
+.rati .red button{
+  background-color: red;
+}
+
+.rati button{
+  width: 102px;
+  margin-bottom: 10px;
+  
+}
+
+
+
+.rati form{
+  margin: 0px;
+  width: 102px;
+}
+
+.rati img {
+   height: 64px;
+  width: 64px;
+
+}
+
+
+.rat button{
+  width: 102px;
+}
+
 svg{
   margin-top: 10px;
   display: block;
@@ -1042,7 +1070,36 @@ svg{
   fill:#f00;
 }
 
-.rati svg{
+.rati img{
   margin-bottom: 20px;
-  margin-left: 96%;
+  margin-left: 94%;
 }
+
+.rat form{
+  margin: 0px;
+}
+
+.rat img{
+  margin-left: 20px;
+  height: 64px;
+  width: 64px;
+}
+
+.rat .card-text{
+  padding-bottom: 0px;
+}
+
+.bottem{
+  padding-bottom: 20px;
+}
+
+.decrip img{
+  margin-left: 1300%;
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+.decrip .both7{
+  margin-top: 10px;
+}
+

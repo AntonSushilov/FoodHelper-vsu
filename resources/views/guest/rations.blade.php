@@ -20,9 +20,9 @@
                 </a>
                 @if (Auth::check())
                     @if (auth()->user()->selectRation->contains($ration))
-                    <a class="" href="{{route('favorite', $ration)}}"><img class="img" src="{{asset('img/icons/heart-s.png')}}" alt=""></a>
+                    <a class="" href="{{route('favorite', $ration)}}"><img class="img" src="{{asset('img/icons/health-s.png')}}" alt=""></a>
                     @else
-                    <a class="" href="{{route('favorite', $ration)}}"><img class="img" src="{{asset('img/icons/heart-o.png')}}" alt=""></a>
+                    <a class="" href="{{route('favorite', $ration)}}"><img class="img" src="{{asset('img/icons/health-o.png')}}" alt=""></a>
                     @endif
 
                 @endif
