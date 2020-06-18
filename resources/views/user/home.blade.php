@@ -68,7 +68,8 @@
             <div class="cards">
                 @if ($rations != '[]')
                     @foreach ($selectRations as $ration)
-                    <div class="card">
+                   
+                        <form class="card">
                         <a href="{{route('ration', ['ration'=>$ration->id])}}" >
                             <div class="card-text">
                                 <div class="card-heading">
@@ -81,7 +82,7 @@
                             </div>
                         </a>
                         <a class="" href="{{route('favorite', $ration)}}"><img class="img" src="{{asset('img/icons/health-s.png')}}" alt=""></a>
-                    </div>
+                        </form>
 
 
                     @endforeach
