@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Продукты'.' - FoodHelper')
+@section('title','Рационы'.' - FoodHelper')
 
 @section('content')
 

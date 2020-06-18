@@ -48,15 +48,7 @@
         </tr>
       @endforelse
     </tbody>
-    <tfoot>
-      <tr>
-        <td>
-          <ul class="pagination pull-right">
-           {{$foods->links()}}
-          </ul>
-        </td>
-      </tr>
-    </tfoot>
+
   </table>
 
 <script>

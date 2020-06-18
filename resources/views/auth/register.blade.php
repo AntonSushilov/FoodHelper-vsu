@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','Регистрация'.' - FoodHelper')
 @section('content')
 <div class="container">
     <div class="both log">
