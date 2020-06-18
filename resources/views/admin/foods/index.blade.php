@@ -48,7 +48,7 @@
         </tr>
       @endforelse
     </tbody>
-    
+
   </table>
 
 <script>

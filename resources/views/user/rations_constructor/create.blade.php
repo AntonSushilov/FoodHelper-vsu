@@ -35,17 +35,17 @@
                 <div class="both7 up">
                        <h3>Блюда</h3>
                        <input class="find" type="text" id="myInputId" onkeyup="searchId()" placeholder="Поиск по блюдам">
-                   </div>
-                   <div class="cardss" id="divLeft2">
-                    @foreach ($dishes as $dish)
-                        <div class="card" draggable="true" ondragstart="drag(event)" id="a{{$dish->id}}">
-                            <span class="close" id="a{{$dish->id}}"></span>
-                            <img class="card-image" id="a{{$dish->id}}" src="{{ asset('/storage/'. $dish->path_foto)}}" alt="Фото продукта">
-                            <div class="card-text">
-                                <p >{{$dish->title}}</p>
+                </div>
+                    <div class="cardss" id="divLeft2">
+                        @foreach ($dishes as $dish)
+                            <div class="card" draggable="true" ondragstart="drag(event)" id="a{{$dish->id}}">
+                                <span class="close" id="a{{$dish->id}}"></span>
+                                <img class="card-image" id="a{{$dish->id}}" src="{{ asset('/storage/'. $dish->path_foto)}}" alt="Фото продукта">
+                                <div class="card-text">
+                                    <p >{{$dish->title}}</p>
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
                     </div>
                </div>
            </div>
@@ -53,7 +53,7 @@
 
 
 
- 
+
            <div class="right" id="divRight">
             <form class="form-horizontal" action="{{route('user.ration_constructor.store')}}" method="post" id="form">
                 {{ csrf_field() }}

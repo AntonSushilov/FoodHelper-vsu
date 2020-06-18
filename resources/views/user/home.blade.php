@@ -4,24 +4,6 @@
 <div class="container rat">
     <div class="row justify-content-center">
         <div class="col-md-8">
-<!--
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-
-
-                </div>
-
-            </div>
--->
             <a class="btn btn-block btn-default" href="{{route('user.ration_constructor.create')}}">Создать рацион</a>
             <h1>Рационы созданные мной</h1>
             <div class="cards">
