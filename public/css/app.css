@@ -861,10 +861,13 @@ table {
 
 .left {
   width: 49%;
+  position: fixed;
 }
 
 .right {
   width: 49%;
+  position: absolute;
+  left: 57%;
 }
 
 .both7 {

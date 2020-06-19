@@ -29,7 +29,7 @@
                         @endforeach
 
                     </div>
-
+ 
                </div>
                <div class="prod jumbotron" id="divLeft2">
                 <div class="both7 up">

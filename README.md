@@ -28,6 +28,8 @@
   <li><a href="https://github.com/AntonSushilov/FoodHelper/blob/master/Documents/Kursovaya.docx">Курсовая работа</a></li>
 	<li><a href="https://trello.com/b/TdKWGmIW/food-helper">Trello</a></li>
 	<li><a href="https://miro.com/app/board/o9J_kugITE0=/">Miro</a></li>
+	<li><a href="https://vk.com/away.php?to=https%3A%2F%2Fprezi.com%2Fview%2FkGrVi0qqVZHgkdPwFEFk%2F&cc_key=">Презентация</a></li>
+	<li><a href="https://foodhelper.site/">Приложение</a></li>
 </ul>
 <h2>Email для связи:</h2>
 <ul>
