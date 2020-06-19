@@ -40,7 +40,7 @@
                    <ul class="menu3 m1">
                         <div class="col-lg-1">
 
-                            <li class="list"><img class="imgg" src="{{ url('/img/3.png') }}" alt="">
+                            <li class="list"><img class="imgg" src="{{asset('img/icons/house.png')}}" alt="">
                                 <ul class="drop2">
                                     @if (Route::has('login'))
                                     @auth

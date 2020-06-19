@@ -50,7 +50,7 @@
             <div class="cards">
                 @if ($rations != '[]')
                     @foreach ($selectRations as $ration)
-                   
+
                         <form class="card">
                         <a href="{{route('ration', ['ration'=>$ration->id])}}" >
                             <div class="card-text">
