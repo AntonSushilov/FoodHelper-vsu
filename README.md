@@ -1,4 +1,4 @@
-<p align="center"><img src="public/img/avokadik.jpg" width="400"></p>
+<p align="center"><img src="public/img/avokadik.png" width="400"></p>
 
 <p align="center">
 <h1>FoodHelper</h1>
@@ -25,7 +25,7 @@
 <h2>Ссылки:</h2>
 <ul>
 	<li><a href="https://github.com/AntonSushilov/FoodHelper/blob/master/Documents/Техническое_задание_FoodHelperV1_3.docx">Техническое задание</a></li>
-  <li><a href="https://github.com/AntonSushilov/FoodHelper/blob/master/Documents/Kursovaya.docx">Курсовая работа</a></li>
+  <li><a href="https://github.com/AntonSushilov/FoodHelper/blob/master/Documents/Kursovaya.pdf">Курсовая работа</a></li>
 	<li><a href="https://trello.com/b/TdKWGmIW/food-helper">Trello</a></li>
 	<li><a href="https://miro.com/app/board/o9J_kugITE0=/">Miro</a></li>
 	<li><a href="https://vk.com/away.php?to=https%3A%2F%2Fprezi.com%2Fview%2FkGrVi0qqVZHgkdPwFEFk%2F&cc_key=">Презентация</a></li>
